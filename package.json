@@ -23,5 +23,12 @@
   "main": "index.js",
   "scripts": {
     "test": "test"
+  },
+  "dependencies": {
+    "jsda-kit": "^0.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "cloud-images-toolkit": "^0.1.4"
   }
 }
