@@ -1,0 +1,125 @@
+{
+  "slug": "reviewer",
+  "name": "Reviewer",
+  "description": "Performs lightweight checks and validations.",
+  "icon": "codicon-check",
+  "color": "#22C55E",
+  "visible": true,
+  "allowDelegation": false,
+  "profiles": {
+    "ids": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "primaryId": null,
+    "rotationMode": "error_fallback"
+  },
+  "promptBindings": {
+    "categoryBindings": [
+      {
+        "categoryId": "role_definitions",
+        "enabled": true,
+        "priority": 85,
+        "specificPrompts": [
+          "reviewer__role"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "task_orchestration",
+        "enabled": true,
+        "priority": 80,
+        "specificPrompts": [
+          "reviewer__return_results",
+          "reviewer__workflow"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "system_core",
+        "enabled": true,
+        "priority": 100,
+        "specificPrompts": [
+          "orchestrator__base_system_prompt"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalPrompts": [],
+    "mergeStrategy": "append",
+    "customOrder": [],
+    "agentId": "reviewer",
+    "aiProfileIds": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "color": "#22C55E",
+    "cacheable": true,
+    "compression": "none",
+    "lastModified": "2025-08-18T11:28:20.715Z",
+    "icon": "codicon-check",
+    "primaryAiProfileId": "mdl_ei1haS9nbG0tNC41"
+  },
+  "toolBindings": {
+    "enabledGroups": [
+      {
+        "groupId": "read",
+        "enabled": true,
+        "specificTools": [],
+        "excludedTools": [],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "groupId": "context",
+        "enabled": true,
+        "specificTools": [],
+        "excludedTools": [],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "groupId": "modes",
+        "enabled": false,
+        "specificTools": [],
+        "excludedTools": [
+          "new_task",
+          "switch_mode",
+          "agent_admin"
+        ],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalTools": [],
+    "inheritFromMode": true,
+    "customConfiguration": {},
+    "agentId": "reviewer",
+    "lastModified": "2025-08-18T11:28:20.715Z"
+  },
+  "visibleAgents": [
+    "orchestrator"
+  ]
+}

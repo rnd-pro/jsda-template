@@ -1,0 +1,314 @@
+[
+  {
+    "id": "read_file",
+    "name": "Read File",
+    "description": "Read the contents of a file",
+    "groupId": "read",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "file",
+      "read"
+    ]
+  },
+  {
+    "id": "fetch_instructions",
+    "name": "Fetch Instructions",
+    "description": "Fetch project-specific instructions",
+    "groupId": "read",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "instructions",
+      "project"
+    ]
+  },
+  {
+    "id": "search_files",
+    "name": "Search Files",
+    "description": "Search for files matching patterns",
+    "groupId": "read",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "search",
+      "files"
+    ]
+  },
+  {
+    "id": "list_files",
+    "name": "List Files",
+    "description": "List files in directories",
+    "groupId": "read",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "list",
+      "directory"
+    ]
+  },
+  {
+    "id": "list_code_definition_names",
+    "name": "List Code Definitions",
+    "description": "List code definitions and symbols",
+    "groupId": "read",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "code",
+      "definitions"
+    ]
+  },
+  {
+    "id": "apply_diff",
+    "name": "Apply Diff",
+    "description": "Apply changes using diff format",
+    "groupId": "edit",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "diff",
+      "changes"
+    ]
+  },
+  {
+    "id": "edit_file",
+    "name": "Edit File",
+    "description": "Edit file contents",
+    "groupId": "edit",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "edit",
+      "file"
+    ]
+  },
+  {
+    "id": "write_to_file",
+    "name": "Write to File",
+    "description": "Write content to a file",
+    "groupId": "edit",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "write",
+      "create"
+    ]
+  },
+  {
+    "id": "insert_content",
+    "name": "Insert Content",
+    "description": "Insert content at specific locations",
+    "groupId": "edit",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "insert",
+      "content"
+    ]
+  },
+  {
+    "id": "search_and_replace",
+    "name": "Search and Replace",
+    "description": "Find and replace text in files",
+    "groupId": "edit",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "search",
+      "replace"
+    ]
+  },
+  {
+    "id": "new_rule",
+    "name": "New Rule",
+    "description": "Create new coding rules",
+    "groupId": "edit",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "rule",
+      "create"
+    ]
+  },
+  {
+    "id": "browser_action",
+    "name": "Browser Action",
+    "description": "Perform web browser actions",
+    "groupId": "browser",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "browser",
+      "web"
+    ]
+  },
+  {
+    "id": "execute_command",
+    "name": "Execute Command",
+    "description": "Execute system commands",
+    "groupId": "command",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": true,
+    "tags": [
+      "command",
+      "system"
+    ]
+  },
+  {
+    "id": "use_mcp_tool",
+    "name": "Use MCP Tool",
+    "description": "Use Model Control Protocol tools",
+    "groupId": "mcp",
+    "isRequired": false,
+    "isExperimental": true,
+    "requiresApproval": false,
+    "tags": [
+      "mcp",
+      "external"
+    ]
+  },
+  {
+    "id": "access_mcp_resource",
+    "name": "Access MCP Resource",
+    "description": "Access Model Control Protocol resources",
+    "groupId": "mcp",
+    "isRequired": false,
+    "isExperimental": true,
+    "requiresApproval": false,
+    "tags": [
+      "mcp",
+      "resource"
+    ]
+  },
+  {
+    "id": "switch_mode",
+    "name": "Switch Mode",
+    "description": "Switch between different agent modes",
+    "groupId": "modes",
+    "isRequired": true,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "mode",
+      "switch"
+    ]
+  },
+  {
+    "id": "new_task",
+    "name": "New Task",
+    "description": "Create a new task",
+    "groupId": "modes",
+    "isRequired": true,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "task",
+      "create"
+    ]
+  },
+  {
+    "id": "agent_admin",
+    "name": "Agent Administration",
+    "description": "Create/edit agents, prompts, and tool bindings (Agent Builder only)",
+    "groupId": "modes",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": true,
+    "tags": [
+      "agents",
+      "admin"
+    ]
+  },
+  {
+    "id": "project_summary",
+    "name": "Project Summary",
+    "description": "Generate project summaries",
+    "groupId": "context",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "summary",
+      "project"
+    ]
+  },
+  {
+    "id": "ask_followup_question",
+    "name": "Ask Followup Question",
+    "description": "Ask followup questions to clarify requirements",
+    "groupId": "modes",
+    "isRequired": true,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "question",
+      "clarification"
+    ]
+  },
+  {
+    "id": "attempt_completion",
+    "name": "Attempt Completion",
+    "description": "Attempt to complete the current task",
+    "groupId": "modes",
+    "isRequired": true,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "completion",
+      "finish"
+    ]
+  },
+  {
+    "id": "report_bug",
+    "name": "Report Bug",
+    "description": "Report bugs or issues",
+    "groupId": "modes",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "bug",
+      "report"
+    ]
+  },
+  {
+    "id": "condense",
+    "name": "Condense",
+    "description": "Condense conversation history",
+    "groupId": "modes",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "condense",
+      "history"
+    ]
+  },
+  {
+    "id": "update_todo_list",
+    "name": "Update Todo List",
+    "description": "Update the todo list",
+    "groupId": "modes",
+    "isRequired": false,
+    "isExperimental": false,
+    "requiresApproval": false,
+    "tags": [
+      "todo",
+      "update"
+    ]
+  }
+]

@@ -1,0 +1,129 @@
+{
+  "slug": "web-researcher",
+  "name": "Web Researcher",
+  "description": "Searches the web and collects facts.",
+  "icon": "codicon-globe",
+  "color": "#16A34A",
+  "visible": true,
+  "allowDelegation": false,
+  "profiles": {
+    "ids": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "primaryId": null,
+    "rotationMode": "error_fallback"
+  },
+  "promptBindings": {
+    "categoryBindings": [
+      {
+        "categoryId": "role_definitions",
+        "enabled": true,
+        "priority": 85,
+        "specificPrompts": [
+          "web-researcher__role",
+          "web_researcher__role"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "task_orchestration",
+        "enabled": true,
+        "priority": 80,
+        "specificPrompts": [
+          "web-researcher__return_results",
+          "web-researcher__workflow"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "system_core",
+        "enabled": true,
+        "priority": 100,
+        "specificPrompts": [
+          "orchestrator__base_system_prompt"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "tool_guidelines",
+        "enabled": true,
+        "priority": 90,
+        "specificPrompts": [
+          "orchestrator__tool_use"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalPrompts": [],
+    "mergeStrategy": "append",
+    "customOrder": [],
+    "agentId": "web-researcher",
+    "aiProfileIds": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "color": "#16A34A",
+    "cacheable": true,
+    "compression": "none",
+    "lastModified": "2025-08-18T11:28:20.716Z",
+    "icon": "codicon-globe",
+    "primaryAiProfileId": "mdl_ei1haS9nbG0tNC41"
+  },
+  "toolBindings": {
+    "enabledGroups": [
+      {
+        "groupId": "browser",
+        "enabled": true,
+        "specificTools": [],
+        "excludedTools": [],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "groupId": "modes",
+        "enabled": false,
+        "specificTools": [],
+        "excludedTools": [
+          "new_task",
+          "switch_mode",
+          "agent_admin"
+        ],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalTools": [],
+    "inheritFromMode": true,
+    "customConfiguration": {},
+    "agentId": "web-researcher",
+    "lastModified": "2025-08-18T11:28:20.716Z"
+  },
+  "visibleAgents": [
+    "orchestrator"
+  ]
+}

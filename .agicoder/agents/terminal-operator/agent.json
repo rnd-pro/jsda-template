@@ -1,0 +1,129 @@
+{
+  "slug": "terminal-operator",
+  "name": "Terminal Operator",
+  "description": "Runs safe diagnostic commands in terminal.",
+  "icon": "codicon-terminal",
+  "color": "#6B7280",
+  "visible": true,
+  "allowDelegation": false,
+  "profiles": {
+    "ids": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "primaryId": null,
+    "rotationMode": "error_fallback"
+  },
+  "promptBindings": {
+    "categoryBindings": [
+      {
+        "categoryId": "role_definitions",
+        "enabled": true,
+        "priority": 85,
+        "specificPrompts": [
+          "terminal-operator__role",
+          "terminal_operator__role"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "task_orchestration",
+        "enabled": true,
+        "priority": 80,
+        "specificPrompts": [
+          "terminal-operator__return_results",
+          "terminal-operator__workflow"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "system_core",
+        "enabled": true,
+        "priority": 100,
+        "specificPrompts": [
+          "orchestrator__base_system_prompt"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "tool_guidelines",
+        "enabled": true,
+        "priority": 90,
+        "specificPrompts": [
+          "orchestrator__tool_use"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalPrompts": [],
+    "mergeStrategy": "append",
+    "customOrder": [],
+    "agentId": "terminal-operator",
+    "aiProfileIds": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "color": "#6B7280",
+    "cacheable": true,
+    "compression": "none",
+    "lastModified": "2025-08-18T11:28:20.715Z",
+    "icon": "codicon-terminal",
+    "primaryAiProfileId": "mdl_ei1haS9nbG0tNC41"
+  },
+  "toolBindings": {
+    "enabledGroups": [
+      {
+        "groupId": "command",
+        "enabled": true,
+        "specificTools": [],
+        "excludedTools": [],
+        "requireApproval": true,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "groupId": "modes",
+        "enabled": false,
+        "specificTools": [],
+        "excludedTools": [
+          "new_task",
+          "switch_mode",
+          "agent_admin"
+        ],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalTools": [],
+    "inheritFromMode": true,
+    "customConfiguration": {},
+    "agentId": "terminal-operator",
+    "lastModified": "2025-08-18T11:28:20.715Z"
+  },
+  "visibleAgents": [
+    "orchestrator"
+  ]
+}

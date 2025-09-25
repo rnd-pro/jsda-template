@@ -1,0 +1,115 @@
+{
+  "slug": "settings-engineer",
+  "name": "Settings Engineer",
+  "description": "Edits application global settings and provider profiles.",
+  "icon": "codicon-settings-gear",
+  "color": "#10B981",
+  "visible": true,
+  "allowDelegation": false,
+  "profiles": {
+    "ids": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "primaryId": null,
+    "rotationMode": "error_fallback"
+  },
+  "promptBindings": {
+    "categoryBindings": [
+      {
+        "categoryId": "role_definitions",
+        "enabled": true,
+        "priority": 90,
+        "specificPrompts": [
+          "settings-engineer__role"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "system_core",
+        "enabled": true,
+        "priority": 100,
+        "specificPrompts": [
+          "orchestrator__base_system_prompt"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      },
+      {
+        "categoryId": "tool_guidelines",
+        "enabled": true,
+        "priority": 90,
+        "specificPrompts": [
+          "orchestrator__tool_use"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalPrompts": [],
+    "mergeStrategy": "append",
+    "customOrder": [],
+    "agentId": "settings-engineer",
+    "aiProfileIds": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "color": "#10B981",
+    "cacheable": true,
+    "compression": "none",
+    "lastModified": "2025-08-18T11:28:20.715Z",
+    "icon": "codicon-settings-gear",
+    "primaryAiProfileId": "mdl_ei1haS9nbG0tNC41"
+  },
+  "toolBindings": {
+    "enabledGroups": [
+      {
+        "groupId": "read",
+        "enabled": true,
+        "specificTools": [],
+        "excludedTools": [],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "groupId": "modes",
+        "enabled": false,
+        "specificTools": [],
+        "excludedTools": [
+          "new_task",
+          "switch_mode",
+          "agent_admin"
+        ],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalTools": [
+      "settings_admin"
+    ],
+    "inheritFromMode": true,
+    "customConfiguration": {},
+    "agentId": "settings-engineer",
+    "lastModified": "2025-08-18T11:28:20.715Z"
+  },
+  "visibleAgents": [
+    "orchestrator"
+  ]
+}

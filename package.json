@@ -1,0 +1,27 @@
+{
+  "name": "jsda-template",
+  "version": "0.0.1",
+  "description": "JSDA project template",
+  "keywords": [
+    "jsda",
+    "jsda-kit",
+    "symbiote.js",
+    "template",
+    "rnd-pro.com"
+  ],
+  "homepage": "https://github.com/rnd-pro/jsda-template#readme",
+  "bugs": {
+    "url": "https://github.com/rnd-pro/jsda-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rnd-pro/jsda-template.git"
+  },
+  "license": "MIT",
+  "author": "team@rnd-pro.com",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  }
+}

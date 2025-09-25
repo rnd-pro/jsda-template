@@ -1,0 +1,119 @@
+{
+  "slug": "agent-builder",
+  "name": "Agent Builder",
+  "description": "Creates and edits agents, prompts, and tool bindings.",
+  "icon": "codicon-tools",
+  "color": "#9333EA",
+  "visible": true,
+  "allowDelegation": false,
+  "profiles": {
+    "ids": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "primaryId": null,
+    "rotationMode": "error_fallback"
+  },
+  "promptBindings": {
+    "categoryBindings": [
+      {
+        "categoryId": "role_definitions",
+        "enabled": true,
+        "priority": 95,
+        "specificPrompts": [
+          "agent-builder__role"
+        ],
+        "excludedPrompts": [],
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "requiredTools": [],
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalPrompts": [],
+    "mergeStrategy": "append",
+    "customOrder": [],
+    "agentId": "agent-builder",
+    "aiProfileIds": [
+      "mdl_ei1haS9nbG0tNC41"
+    ],
+    "color": "#9333EA",
+    "cacheable": true,
+    "compression": "none",
+    "lastModified": "2025-08-18T11:28:20.711Z",
+    "icon": "codicon-tools",
+    "primaryAiProfileId": "mdl_ei1haS9nbG0tNC41"
+  },
+  "toolBindings": {
+    "enabledGroups": [
+      {
+        "groupId": "modes",
+        "enabled": false,
+        "specificTools": [],
+        "excludedTools": [
+          "new_task",
+          "switch_mode"
+        ],
+        "requireApproval": false,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "additionalTools": [
+      "agent_admin"
+    ],
+    "inheritFromMode": true,
+    "customConfiguration": {},
+    "agentId": "agent-builder",
+    "lastModified": "2025-08-18T11:28:20.711Z"
+  },
+  "contextBindings": {
+    "enabledSystems": [
+      {
+        "systemId": "time_info",
+        "enabled": true,
+        "priority": 30,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "onlyWithActiveFiles": false,
+          "onlyWithTerminals": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "systemId": "mode_info",
+        "enabled": true,
+        "priority": 50,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "onlyWithActiveFiles": false,
+          "onlyWithTerminals": false,
+          "environmentVariables": {}
+        }
+      },
+      {
+        "systemId": "todo_reminders",
+        "enabled": true,
+        "priority": 50,
+        "conditions": {
+          "onlyWhenModeActive": false,
+          "onlyWithActiveFiles": false,
+          "onlyWithTerminals": false,
+          "environmentVariables": {}
+        }
+      }
+    ],
+    "globalSettings": {
+      "maxTotalTokens": 1000,
+      "compressionEnabled": true,
+      "smartPrioritization": true
+    },
+    "agentId": "agent-builder",
+    "lastModified": "2025-08-18T11:28:20.711Z"
+  },
+  "visibleAgents": [
+    "orchestrator"
+  ]
+}
