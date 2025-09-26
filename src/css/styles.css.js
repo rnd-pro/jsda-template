@@ -17,7 +17,7 @@ export default /*css*/ `
   --ui-size: 40px;
   --col-w: 960px;
 
-  --calc-gap-aside: calc(((100vw - var(--col-w)) / 2) + var(--gap-max));
+  --calc-gap-aside: calc((100vw - var(--col-w)) / 2);
 }
 
 * {
@@ -32,6 +32,11 @@ html, body {
   color: var(--clr-2);
 }
 
+body {
+  display: block;
+  padding-left: var(--ui-size);
+}
+
 header {
   position: sticky;
   top: 0;
@@ -41,9 +46,9 @@ header {
   justify-content: space-between;
   gap: var(--gap-max);
   z-index: 1000;
-  background-color: var(--clr-2);
-  color: var(--clr-1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  background-color: var(--clr-1);
+  color: var(--clr-2);
+  border-bottom: var(--gap-min) solid currentColor;
   padding-left: var(--calc-gap-aside);
   padding-right: var(--calc-gap-aside);
 }
@@ -54,8 +59,9 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: var(--gap-max);
-  background-color: var(--clr-2);
-  color: var(--clr-1);
+  background-color: var(--clr-1);
+  color: var(--clr-2);
+  border-top: var(--gap-min) solid currentColor;
   padding-left: var(--calc-gap-aside);
   padding-right: var(--calc-gap-aside);
 }
@@ -66,7 +72,26 @@ article {
   max-width: var(--col-w);
   min-height: calc(100vh - var(--ui-size) * 2);
   padding: var(--gap-max);
+
+  blockquote {
+    display: block;
+    margin: 0;
+    padding: var(--gap-max);
+    border: 1px solid currentColor;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  a {
+    color: currentColor;
+    font-weight: bold;
+  }
 }
+
+
 
 ${codeStyles}
 ${components}

@@ -10,7 +10,7 @@ export default applyData(template, {
   BASE_PATH: './',
   CSS_PATH: 'css/index.css',
   HEADER_CONTENT: 'My Site',
-  CONTENT: await md('./src/md/article.md'),
+  CONTENT: await md('https://raw.githubusercontent.com/rnd-pro/jsda/refs/heads/main/README.md'),
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 
   /** 

@@ -1,6 +1,22 @@
+const menuData = [
+  {
+    name: 'Home',
+    path: '/'
+  },
+  {
+    name: 'About',
+    path: '/about'
+  },
+  {
+    name: 'Blog',
+    path: '/blog'
+  },
+  {
+    name: 'Contacts',
+    path: '/contacts'
+  }
+];
+
 export default /*html*/ `
-<button>Home</button>
-<button>About</button>
-<button>Blog</button>
-<button>Contacts</button>
+${menuData.map(item => `<a href="${item.path}">${item.name}</a>`).join('')}
 `;

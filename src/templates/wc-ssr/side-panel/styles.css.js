@@ -17,10 +17,21 @@ side-panel {
   transform: translateX(calc(-100% + var(--ui-size)));
   transition: 0.3s ease-in-out;
   border-right: var(--ui-size) solid var(--clr-2);
+  cursor: pointer;
 
   &:focus-within {
     transform: translateX(0);
     border-right: var(--gap-min) solid var(--clr-2);
+    cursor: default;
+  }
+}
+
+@media (min-width: 1400px) {
+  side-panel {
+    transform: translateX(0);
+    border-right: var(--gap-min) solid var(--clr-2);
+    cursor: default;
+    box-shadow: none;
   }
 }
 `;

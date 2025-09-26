@@ -8,8 +8,8 @@ export default {
     }
   },
   static: {
-    outputDir: './dist/static',
-    sourceDir: './src'
+    outputDir: './dist',
+    sourceDir: './src/static',
   },
   minify: {
     js: true,
