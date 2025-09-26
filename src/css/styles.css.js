@@ -6,6 +6,10 @@ const components = Object.values(await import('../templates/wc-ssr/exports.css.j
 }).join('\n');
 
 export default /*css*/ `
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   --clr-1: #eee;
   --clr-2: #212121;
@@ -18,6 +22,7 @@ export default /*css*/ `
   --col-w: 960px;
 
   --calc-gap-aside: calc((100vw - var(--col-w)) / 2);
+  --calc-top-pan-height: calc(var(--ui-size) + var(--gap-mid) * 2);
 }
 
 * {
@@ -40,7 +45,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  height: var(--ui-size);
+  height: var(--calc-top-pan-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,7 +60,7 @@ header {
 
 footer {
   display: flex;
-  height: var(--ui-size);
+  height: var(--calc-top-pan-height);
   align-items: center;
   justify-content: space-between;
   gap: var(--gap-max);
@@ -77,8 +82,7 @@ article {
     display: block;
     margin: 0;
     padding: var(--gap-max);
-    border: 1px solid currentColor;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border: var(--gap-min) solid currentColor;
 
     p {
       margin: 0;
@@ -90,8 +94,6 @@ article {
     font-weight: bold;
   }
 }
-
-
 
 ${codeStyles}
 ${components}

@@ -9,7 +9,7 @@ export default applyData(template, {
   TITLE: 'Home',
   BASE_PATH: './',
   CSS_PATH: 'css/index.css',
-  HEADER_CONTENT: 'My Site',
+  HEADER_CONTENT: 'JSDAStack Reference Project',
   CONTENT: await md('https://raw.githubusercontent.com/rnd-pro/jsda/refs/heads/main/README.md'),
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 

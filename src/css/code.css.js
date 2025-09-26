@@ -16,6 +16,17 @@ let hlSelectorsList = [
   '.hljs-literal',
 ];
 
+let generated = '';
+
+let step = 0;
+let hsl = () => {
+  return `hsl(${step++ * 150}deg 85% 74%)`;
+};
+
+hlSelectorsList.forEach((selector) => {
+  generated += /*css*/ `${selector} {color: ${hsl()};}`;
+});
+
 let hlStyles = /*css*/ `
 pre {
   font-family: monospace;
@@ -26,20 +37,15 @@ pre {
     color: var(--clr-1);
     padding: var(--gap-max);
     overflow-x: auto;
+
+    ${generated}
+
+    .hljs-comment {
+      font-style: italic;
+      opacity: .7;
+    }
   }
 }
 `;
-let step = 0;
-let hsl = () => {
-  return `hsl(${step++ * 150}deg 85% 74%)`;
-};
-
-hlSelectorsList.forEach((selector) => {
-  hlStyles += /*css*/ `
-    code ${selector} {
-      color: ${hsl()};
-    }
-  `;
-});
 
 export default hlStyles;

@@ -1,22 +1,26 @@
 const menuData = [
   {
     name: 'Home',
-    path: '/'
+    path: '/',
+    attr: 'current',
   },
   {
     name: 'About',
-    path: '/about'
+    path: '/about',
+    attr: '',
   },
   {
     name: 'Blog',
-    path: '/blog'
+    path: '/blog',
+    attr: '',
   },
   {
     name: 'Contacts',
-    path: '/contacts'
+    path: '/contacts',
+    attr: '',
   }
 ];
 
 export default /*html*/ `
-${menuData.map(item => `<a href="${item.path}">${item.name}</a>`).join('')}
+${menuData.map(item => `<a ${item.attr} href="${item.path}">${item.name}</a>`).join('')}
 `;
