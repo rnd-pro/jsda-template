@@ -1,7 +1,7 @@
 export default {
   dynamic: {
     port: 3000,
-    routes: './src.dynamic/routes.js',
+    routes: './src/dynamic/routes.js',
     cache: {
       inMemory: true,
       exclude: [],
