@@ -11,6 +11,10 @@ const menuData = [
     name: 'Cloud Images Toolkit',
     path: './pages/cit/',
   },
+  {
+    name: 'Template Repo',
+    path: './pages/template/',
+  },
 ];
 
 export default /*html*/ `
