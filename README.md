@@ -10,7 +10,7 @@ A modern template repository for creating JSDAStack projects with static-site-ge
 ## 🚀 Features
 
 - **Server-Side Rendering (SSR)** - Full SSR support for web components
-- **Web Components** - Built with [Symbiote.js](https://github.com/symbiotejs/symbiote) framework
+- **Web Components** - Built with [Symbiote.js](https://rnd-pro.com/symbiote/) framework
 - **TypeScript Support** - Optional TypeScript configuration included
 - **Static Site Generation** - Build static sites with dynamic routing
 - **Markdown Processing** - Built-in markdown rendering capabilities
@@ -122,7 +122,7 @@ export default {
 
 ### Core Dependencies
 
-- **[@symbiotejs/symbiote](https://github.com/symbiotejs/symbiote)** - Web components framework
+- **[@symbiotejs/symbiote](https://rnd-pro.com/symbiote/)** - Web components framework
 - **[jsda-kit](https://github.com/rnd-pro/jsda-kit)** - JSDA development toolkit
 
 ### Development Dependencies
@@ -161,7 +161,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - [JSDAStack Documentation](https://github.com/rnd-pro/jsda)
-- [Symbiote.js Framework](https://rnd-pro.com/symbiote)
+- [Symbiote.js Framework](https://rnd-pro.com/symbiote/)
 - [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
 
 ## 📞 Support
