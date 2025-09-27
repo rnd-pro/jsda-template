@@ -4,8 +4,8 @@ export default {
     routes: './src.dynamic/routes.js',
     cache: {
       inMemory: true,
-      exclude: []
-    }
+      exclude: [],
+    },
   },
   static: {
     outputDir: './dist',
@@ -16,18 +16,20 @@ export default {
     css: true,
     html: true,
     svg: true,
-    exclude: []
+    exclude: [],
   },
   bundle: {
     js: true,
     css: true,
-    exclude: []
+    exclude: [],
   },
   log: true,
   importmap: {
-    packageList: [],
+    packageList: [
+      '@symbiotejs/symbiote',
+    ],
     srcSchema: 'https://cdn.jsdelivr.net/npm/{pkg-name}/+esm',
     polyfills: false,
-    preload: true
-  }
+    preload: true,
+  },
 }

@@ -1,7 +1,7 @@
 import codeStyles from './code.css.js'; // Auto-generated code highlighting styles
 
 // Collect all component styles:
-const components = Object.values(await import('../templates/wc-ssr/exports.css.js')).map((m) => {
+const components = Object.values(await import('../components/exports.css.js')).map((m) => {
   return m.default;
 }).join('\n');
 
@@ -92,6 +92,10 @@ article {
   a {
     color: currentColor;
     font-weight: bold;
+  }
+
+  img[src^="https://rnd-pro.com/idn/"] {
+    width: 100%;
   }
 }
 

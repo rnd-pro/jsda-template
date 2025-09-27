@@ -25,7 +25,8 @@
     "test": "test"
   },
   "dependencies": {
-    "jsda-kit": "^0.2.11"
+    "@symbiotejs/symbiote": "^2.3.3",
+    "jsda-kit": "^0.2.12"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
