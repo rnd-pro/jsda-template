@@ -4,7 +4,18 @@ export class SidePanel extends Symbiote {
   ssrMode = true;
 
   renderCallback() {
-    console.log('HELLO SIDE_PANEL!');
+    let menuItems = [...this.querySelectorAll('a')];
+    let current;
+    menuItems.forEach((el) => {
+      let elHref = el.getAttribute('href').replace('./', '').trim();
+      if (elHref && window.location.pathname.includes(elHref)) {
+        el.setAttribute('current', '');
+        current = el;
+      }
+    });
+    if (!current) {
+      this.querySelector('a')?.setAttribute('current', '');
+    }
   }
 }
 
