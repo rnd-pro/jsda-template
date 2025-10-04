@@ -1,1 +1,1 @@
-import {} from '../../components/side-panel/side-panel.js';
+import {} from '../../components/side-panel/logic.js';

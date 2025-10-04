@@ -97,6 +97,46 @@ article {
   img[src^="https://rnd-pro.com/idn/"] {
     width: 100%;
   }
+
+  svg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+
+    path {
+      vector-effect: non-scaling-stroke;
+    }
+  }
+
+  ul {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+    li {
+      position: relative;
+      display: block;
+      padding: 10px;
+      padding-left: 30px;
+      border-left: 1px solid currentColor;
+      margin-bottom: 0;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 10px;
+        height: 1px;
+        border-bottom: 1px solid currentColor;
+        content: "";
+        color: currentColor;
+        margin-right: var(--gap-mid);
+      }
+    }
+  }
 }
 
 ${codeStyles}

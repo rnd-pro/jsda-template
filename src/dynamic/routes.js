@@ -1,3 +1,4 @@
 export default {
-  '/': './src/dynamic/home.html.js',
+  '/': './src/dynamic/login.html.js',
+  '/dashboard/': './src/dynamic/dashboard.html.js',
 };

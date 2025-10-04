@@ -4,7 +4,7 @@ import { md } from 'jsda-kit/node/md.js';
 import importmap from 'jsda-kit/node/importmap.js';
 import fs from 'fs';
 
-const template = fs.readFileSync('./src/templates/home-template.html', 'utf8');
+const template = fs.readFileSync('./src/static/page.tpl.html', 'utf8');
 
 /**
  * @typedef {Object} PageData
