@@ -6,7 +6,7 @@ import { applyData } from 'jsda-kit/iso/applyData.js';
 // Importmap generation
 import IMPORTMAP from 'jsda-kit/node/importmap.js';
 
-let template = fs.readFileSync(new URL('./login.tpl.html', import.meta.url), 'utf-8');
+let template = fs.readFileSync(new URL('./tpl/login.tpl.html', import.meta.url), 'utf-8');
 
 export default applyData(await wcSsr(template, './src/components/{tag-name}/ssr-tpl.js', {}), {
   IMPORTMAP,

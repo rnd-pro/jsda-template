@@ -1,4 +1,5 @@
 import routes from '../routes.js';
+import accessToken from '../../../secrets/access.js';
 
 /**
  * 
@@ -33,7 +34,7 @@ export async function getRouteFn(url, headers) {
     let [key, value] = cookieStr.trim().split('=');
     cookiesObj[key] = value;
   });
-  if (route === '/dashboard/' && cookiesObj.access_token === '123123') {
+  if (route === '/dashboard/' && cookiesObj.access_token === accessToken) {
     return route;
   } else if (route === '/dashboard/') {
     return '/login/';
