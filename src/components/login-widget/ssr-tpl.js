@@ -1,4 +1,4 @@
 export default /*html*/ `
-<input type="password" id="password" placeholder="Enter password" />
+<input type="password" ref="password" placeholder="Enter access token" />
 <button bind="onclick: onLoginClicked">Login</button>
 `;

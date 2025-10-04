@@ -7,6 +7,13 @@ export class LoginWidget extends Symbiote {
   init$ = {
     onLoginClicked: () => {
       console.log('Login clicked');
+      let token = this.ref.password.value.trim();
+      if (token) {
+        document.cookie = `access_token=${token}; path=/`;
+        window.location.href = '/dashboard/';
+      } else {
+        alert('Please enter an access token');
+      }
     }
   }
 
