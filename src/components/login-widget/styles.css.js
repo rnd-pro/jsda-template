@@ -18,6 +18,10 @@ login-widget {
   }
 
   button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-mid);
     height: var(--ui-size);
     background-color: var(--clr-1);
     color: var(--clr-2);

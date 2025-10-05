@@ -1,4 +1,5 @@
 import LoginWidgetStyles from '../../components/login-widget/styles.css.js';
+import iconsCss from '../../icons/icons.css.js';
 
 export default /*css*/ `
 :root {
@@ -53,4 +54,7 @@ footer {
 
 /* Component Styles */
 ${LoginWidgetStyles}
+
+/* Icon Styles */
+${iconsCss}
 `;
