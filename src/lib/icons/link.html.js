@@ -1,3 +1,5 @@
+// Documentation: https://developers.google.com/fonts/docs/material_symbols
+
 import names from './collection.js';
 
 // IMPORTANT: Icon names should be sorted alphabetically

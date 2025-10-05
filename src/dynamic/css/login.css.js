@@ -1,27 +1,9 @@
-import LoginWidgetStyles from '../../components/login-widget/styles.css.js';
-import iconsCss from '../../icons/icons.css.js';
+import LoginWidgetStyles from '../../lib/components/login-widget/styles.css.js';
+import iconsCss from '../../lib/icons/icons.css.js';
+import common from '../../lib/css/common.css.js';
 
 export default /*css*/ `
-:root {
-  --clr-1: rgba(39, 39, 60, 1);
-  --clr-2: hsla(240, 82%, 87%, 1.00);
-
-  --gap-min: 2px;
-  --gap-mid: 10px;
-  --gap-max: 20px;
-
-  --ui-size: 40px;
-  --col-w: 960px;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: var(--clr-1);
-  color: var(--clr-2);
-  min-height: 100vh;
-}
+${common}
 
 main {
   display: flex;

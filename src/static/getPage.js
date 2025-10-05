@@ -43,7 +43,7 @@ export async function getPage(pageData) {
      */
     SIDE_PANEL: await wcSsr(
       pageData.SIDE_PANEL_HTML || /*html*/ `<side-panel tabindex="0"></side-panel>`,
-      './src/components/{tag-name}/ssr-tpl.js', 
+      './src/lib/components/{tag-name}/ssr-tpl.js', 
       pageData.SIDE_PANEL_DATA || {}),
   });
 };

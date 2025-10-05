@@ -1,3 +1,3 @@
-import styles from '../../css/styles.css.js';
+import styles from '../../lib/css/styles.css.js';
 
 export default styles;
