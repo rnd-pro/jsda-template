@@ -27,11 +27,14 @@ side-panel {
 
   a {
     display: flex;
+    gap: var(--gap-mid);
+    align-items: center;
+    
     height: var(--ui-size);
     background-color: var(--clr-1);
     color: var(--clr-2);
     align-items: center;
-    padding-left: var(--gap-max);
+    padding-left: var(--gap-mid);
     padding-right: var(--gap-max);
     cursor: pointer;
     text-decoration: none;

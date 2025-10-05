@@ -20,7 +20,6 @@ header {
   background-color: var(--clr-2);
   color: var(--clr-1);
   padding: 0 var(--gap-max);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 footer {
@@ -31,7 +30,6 @@ footer {
   background-color: var(--clr-2);
   color: var(--clr-1);
   padding: 0 var(--gap-max);
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
 }
 
 /* Component Styles */

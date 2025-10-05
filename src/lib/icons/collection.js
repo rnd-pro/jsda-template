@@ -7,4 +7,7 @@ export default {
   search: 'search',
   settings: 'settings',
   logout: 'logout',
+  arrow_forward: 'arrow_forward',
+  arrow_back: 'arrow_back',
+  dashboard: 'dashboard',
 };

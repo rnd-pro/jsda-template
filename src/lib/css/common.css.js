@@ -80,7 +80,7 @@ article {
       display: block;
       padding: 10px;
       padding-left: 30px;
-      border-left: 1px solid currentColor;
+      border-left: var(--gap-min)solid currentColor;
       margin-bottom: 0;
 
       &::before {
@@ -88,8 +88,8 @@ article {
         left: 0;
         top: 50%;
         width: 10px;
-        height: 1px;
-        border-bottom: 1px solid currentColor;
+        height: var(--gap-min);
+        border-bottom: var(--gap-min) solid currentColor;
         content: "";
         color: currentColor;
         margin-right: var(--gap-mid);

@@ -1,3 +1,5 @@
+import { icon } from '../../icons/icon.js';
+
 const menuData = [
   {
     name: 'JSDAStack',
@@ -18,5 +20,5 @@ const menuData = [
 ];
 
 export default /*html*/ `
-${menuData.map(item => `<a href="${item.path}">${item.name}</a>`).join('')}
+${menuData.map(item => `<a href="${item.path}">${icon('arrow_forward')} ${item.name}</a>`).join('')}
 `;
