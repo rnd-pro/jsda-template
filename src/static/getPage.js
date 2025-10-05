@@ -4,6 +4,7 @@ import { applyData } from 'jsda-kit/iso/applyData.js';
 import { md } from 'jsda-kit/node/md.js';
 import importmap from 'jsda-kit/node/importmap.js';
 import ICONS_LINK from '../lib/icons/link.html.js';
+import EMOJI_LINK from '../lib/emoji/link.html.js';
 
 const template = fs.readFileSync('./src/static/page.tpl.html', 'utf8');
 
@@ -31,6 +32,7 @@ export async function getPage(pageData) {
   return applyData(template, {
     IMPORTMAP: pageData.IMPORTMAP || importmap,
     ICONS_LINK,
+    EMOJI_LINK,
     TITLE: pageData.TITLE,
     BASE_PATH: pageData.BASE_PATH || './',
     CSS_PATH: pageData.CSS_PATH || 'css/index.css',
