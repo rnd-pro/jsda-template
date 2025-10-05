@@ -6,17 +6,22 @@ import { applyData } from 'jsda-kit/iso/applyData.js';
 // Importmap generation
 import IMPORTMAP from 'jsda-kit/node/importmap.js';
 // Google Icons link
-import iconsLink from '../lib/icons/link.html.js';
+import ICONS_LINK from '../lib/icons/link.html.js';
+// Google Noto Emoji link
+import EMOJI_LINK from '../lib/emoji/link.html.js';
+// Emoji helper
+import { emo } from '../lib/emoji/emo.js';
 
 let template = fs.readFileSync(new URL('./tpl/dashboard.tpl.html', import.meta.url), 'utf-8');
 
 export default applyData(await wcSsr(template, './src/components/{tag-name}/ssr-tpl.js', {}), {
   IMPORTMAP,
-  ICONS_LINK: iconsLink,
+  ICONS_LINK,
+  EMOJI_LINK,
   TITLE: 'Dashboard',
   BASE_HREF: '../',
   CSS_PATH: './css/dashboard.css.js',
   JS_PATH: './browser/dashboard/index.js',
-  HEADER_CONTENT: 'Dashboard',
+  HEADER_CONTENT: `${emo('🍰')} Dashboard`,
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 });
