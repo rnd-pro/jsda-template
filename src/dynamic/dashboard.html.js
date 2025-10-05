@@ -16,7 +16,7 @@ export default applyData(await wcSsr(template, './src/components/{tag-name}/ssr-
   TITLE: 'Dashboard',
   BASE_HREF: '../',
   CSS_PATH: './css/dashboard.css.js',
-  JS_PATH: './app/dashboard/index.js',
+  JS_PATH: './browser/dashboard/index.js',
   HEADER_CONTENT: 'Dashboard',
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 });

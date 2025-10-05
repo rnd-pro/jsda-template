@@ -16,7 +16,7 @@ export default applyData(await wcSsr(template, './src/lib/components/{tag-name}/
   TITLE: 'Login Page',
   BASE_HREF: '../',
   CSS_PATH: './css/login.css.js',
-  JS_PATH: './app/login/index.js',
+  JS_PATH: './browser/login/index.js',
   HEADER_CONTENT: 'Login Page',
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 });

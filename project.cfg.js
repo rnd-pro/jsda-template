@@ -1,4 +1,4 @@
-import { getDataFn, getRouteFn } from './src/dynamic/handlers/handlers.js';
+import { getDataFn, getRouteFn } from './src/dynamic/node/handlers.js';
 
 /** @type { JSDA_CFG } */
 export default {
