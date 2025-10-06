@@ -3,171 +3,127 @@
 ![JSDAStack](https://img.shields.io/badge/JSDAStack-Template-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![JSDA Kit](https://img.shields.io/badge/jsda--kit-0.3.6-orange)
 ![Symbiote.js](https://img.shields.io/badge/Symbiote.js-2.3.3-orange)
+![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-0.1.4-orange)
 
-A modern template repository for creating JSDAStack projects with static-site-generation (SSG), server-side rendering (SSR), web components, and TypeScript support.
+This repository serves as a comprehensive template for kickstarting modern web projects using the **JSDAStack**. It is pre-configured for a seamless development experience, featuring Static Site Generation (SSG), Server-Side Rendering (SSR) with web components, and optional TypeScript support.
 
-## 🚀 Features
+## 🚀 Core Features
 
-- **Server-Side Rendering (SSR)** - Full SSR support for web components
-- **Web Components** - Built with [Symbiote.js](https://rnd-pro.com/symbiote/) framework
-- **TypeScript Support** - Optional TypeScript configuration included
-- **Static Site Generation** - Build static sites with dynamic routing
-- **Markdown Processing** - Built-in markdown rendering capabilities
-- **Component Library** - Modular component architecture
-- **Modern ES Modules** - Native ES module support
-- **Minification & Bundling** - On-the-fly asset optimization
+- **Hybrid Rendering**: Full support for both SSG and SSR, allowing for flexible and performant web applications.
+- **Web Components**: Leverages the [Symbiote.js](https://symbiotejs.org/) framework for creating reusable and encapsulated components.
+- **TypeScript Integration**: Comes with a pre-configured `tsconfig.json` for optional static typing in your JavaScript code.
+- **Dynamic Routing**: The dynamic application part uses a simple yet powerful routing mechanism.
+- **Markdown Processing**: Built-in capabilities for rendering Markdown content.
+- **Component-Based Architecture**: A modular structure for building and maintaining your component library.
+- **ES Modules**: Utilizes native ES modules for a modern development workflow.
+- **Asset Optimization**: On-the-fly minification and bundling for JavaScript, CSS, HTML, and SVG assets.
+- **Cloud Image Management**: Integrated with the [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit) for efficient image handling and optimization.
 
 ## 📁 Project Structure
 
+The project is organized into the following main directories:
+
 ```
+.
+├── cit/                     # Cloud Images Toolkit data and configuration
+├── dist/                    # Build output for the static site
 ├── src/
-│   ├── components/          # Reusable web components
-│   │   └── side-panel/      # Example side panel component
-│   ├── css/                 # JSDA Stylesheets
-│   ├── dynamic/             # Dynamic JSDA application code
+│   ├── dynamic/             # Dynamic application source code (SSR)
+│   │   ├── browser/         # Client-side JavaScript for dynamic pages
+│   │   ├── css/             # CSS for dynamic pages
+│   │   ├── node/            # Node.js handlers for data and routing
+│   │   └── tpl/             # HTML templates for dynamic pages
+│   ├── lib/                 # Shared libraries and components
+│   │   ├── components/      # Reusable web components
+│   │   ├── css/             # Common stylesheets
+│   │   ├── emoji/           # Emoji-related assets
+│   │   └── icons/           # Icon library
 │   ├── md/                  # Markdown content files
-│   ├── static/              # Static assets and pages
-│   │   ├── css/             # Static CSS files
-│   │   ├── js/              # Static JavaScript files
-│   │   └── pages/           # Static page definitions
-│   └── templates/           # HTML templates
-├── project.cfg.js           # Project configuration
+│   └── static/              # Static site source code (SSG)
+│       ├── css/             # CSS for static pages
+│       ├── js/              # JavaScript for static pages
+│       └── pages/           # Page definitions for the static site
+├── types/                   # Project-wide TypeScript type definitions
+├── project.cfg.js           # Main project configuration file
+├── cit-config.json          # Configuration for the Cloud Images Toolkit
 ├── tsconfig.json            # TypeScript configuration
-└── package.json             # Dependencies and scripts
+└── package.json             # Project dependencies and scripts
 ```
 
-## 🛠️ Quick Start
+## 🛠️ Getting Started
 
 ### Prerequisites
 
-- Node.js 18 or higher
+- Node.js version 18 or higher
 - npm or yarn package manager
 
 ### Installation
 
-1. **Use this template** to create a new repository or clone it:
-   ```bash
-   git clone https://github.com/rnd-pro/jsda-template.git my-project
-   cd my-project
-   ```
+1.  **Create a new repository** from this template or clone it:
+    ```bash
+    git clone https://github.com/rnd-pro/jsda-template.git my-project
+    cd my-project
+    ```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+2.  **Install the dependencies**:
+    ```bash
+    npm install
+    ```
 
-3. **Static site development:**
-   ```bash
-   jsda ssr
-   ```
+### Development Servers
 
-4. **Dynamic JSDA-Server Usage:**
-   ```bash
-   jsda serve
-   ```
+-   **Static Site Development (SSG)**:
+    This command starts a development server for the static site with hot-reloading.
+    ```bash
+    jsda ssr
+    ```
 
-## 📖 Usage
-
-### Dynamic Server Routes
-
-Define dynamic routes in `src/dynamic/routes.js`:
-
-```javascript
-export default {
-  '/': './src/dynamic/home.html.js',
-  '/about': './src/dynamic/about.html.js',
-  // Add more routes here
-};
-```
+-   **Dynamic Application Development (SSR)**:
+    This command starts the dynamic application server.
+    ```bash
+    jsda serve
+    ```
 
 ## ⚙️ Configuration
 
-### Project Configuration
+The project's behavior is controlled by the `project.cfg.js` file. Here you can configure the dynamic and static parts of the application, minification, bundling, and import maps.
 
-Configure your project in `project.cfg.js`:
+The `cit-config.json` file is used to configure the Cloud Images Toolkit. For more information, please refer to the [official documentation](https://github.com/rnd-pro/cloud-images-toolkit).
 
-```javascript
-export default {
-  dynamic: {
-    port: 3000,              // Dynamic server port
-    routes: './src/dynamic/routes.js',
-    cache: {
-      inMemory: true,
-      exclude: [],
-    },
-  },
-  static: {
-    outputDir: './dist',     // Build output directory
-    sourceDir: './src/static', // Static files source directory
-  },
-  minify: {
-    js: true,
-    css: true,
-    html: true,
-    svg: true,
-  },
-  bundle: {
-    js: true,
-    css: true,
-  },
-  importmap: {
-    packageList: ['@symbiotejs/symbiote'], // Importmap package list
-    srcSchema: 'https://cdn.jsdelivr.net/npm/{pkg-name}/+esm',
-  },
-};
-```
+## 📦 Key Dependencies
 
-## 📦 Dependencies
+### Core
 
-### Core Dependencies
+-   **[@symbiotejs/symbiote](https://symbiotejs.org/)**: A lightweight and powerful framework for creating web components.
+-   **[jsda-kit](https://github.com/rnd-pro/jsda-kit)**: The development toolkit for JSDAStack projects.
 
-- **[@symbiotejs/symbiote](https://rnd-pro.com/symbiote/)** - Web components framework
-- **[jsda-kit](https://github.com/rnd-pro/jsda-kit)** - JSDA development toolkit
+### Development
 
-### Development Dependencies
-
-- **@types/node** - Node.js type definitions
-- **cloud-images-toolkit** - Image publishing utilities
-
-## 🏗️ Build Process
-
-The template supports both static site generation and dynamic server-side rendering:
-
-1. **Static Build**: Generates static HTML files for hosting
-2. **Dynamic Build**: Creates a server-side rendered application
-3. **Hybrid Mode**: Combines static and dynamic rendering
-
-## 📚 Examples
-
-The template includes several example implementations:
-
-- **Side Panel Component** - Navigation component with SSR support
-- **Page Templates** - HTML template with variable substitution
-- **Markdown Rendering** - Dynamic markdown content processing
+-   **[@types/node](https://www.npmjs.com/package/@types/node)**: Type definitions for Node.js.
+-   **[cloud-images-toolkit](https://github.com/rnd-pro/cloud-images-toolkit)**: A toolkit for managing and publishing images to the cloud.
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! Please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new feature branch (`git checkout -b feature/your-feature`).
+3.  Commit your changes (`git commit -m 'Add your feature'`).
+4.  Push to the branch (`git push origin feature/your-feature`).
+5.  Open a Pull Request.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🔗 Links
+## 🔗 Useful Links
 
-- [JSDAStack Documentation](https://github.com/rnd-pro/jsda)
-- [Symbiote.js Framework](https://rnd-pro.com/symbiote/)
-- [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
-
-## 📞 Support
-
-- Create an [issue](https://github.com/rnd-pro/jsda-template/issues) for bug reports
-- Contact: team@rnd-pro.com
+-   [JSDAStack Documentation](https://github.com/rnd-pro/jsda)
+-   [Symbiote.js Framework](https://symbiotejs.org/)
+-   [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
+-   [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit)
 
 ---
 
