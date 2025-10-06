@@ -25,6 +25,6 @@ export default applyData(await wcSsr(template, './src/components/{tag-name}/ssr-
   CSS_PATH: './css/dashboard.css.js',
   JS_PATH: './browser/dashboard/index.js',
   HEADER_CONTENT: `${icon('dashboard')} Dashboard`,
-  CONTENT: `${emo('🍰')} DASHBOARD CONTENT`,
+  CONTENT: /*html*/ `<div emostration>${emo('🍰')}</div>`,
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 });

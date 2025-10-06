@@ -32,6 +32,10 @@ footer {
   padding: 0 var(--gap-max);
 }
 
+div[emostration] > [emoji] {
+  font-size: 200px;
+}
+
 /* Icon Styles */
 ${iconsCss}
 

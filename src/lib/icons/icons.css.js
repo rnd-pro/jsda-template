@@ -11,7 +11,7 @@ span[icon] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2em;
   width: 1.5em;
   height: 1.5em;
   line-height: 1;
