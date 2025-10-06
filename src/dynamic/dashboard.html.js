@@ -7,6 +7,8 @@ import { applyData } from 'jsda-kit/iso/applyData.js';
 import IMPORTMAP from 'jsda-kit/node/importmap.js';
 // Google Icons link
 import ICONS_LINK from '../lib/icons/link.html.js';
+// Icon helper
+import { icon } from '../lib/icons/icon.js';
 // Google Noto Emoji link
 import EMOJI_LINK from '../lib/emoji/link.html.js';
 // Emoji helper
@@ -22,6 +24,7 @@ export default applyData(await wcSsr(template, './src/components/{tag-name}/ssr-
   BASE_HREF: '../',
   CSS_PATH: './css/dashboard.css.js',
   JS_PATH: './browser/dashboard/index.js',
-  HEADER_CONTENT: `${emo('🍰')} Dashboard`,
+  HEADER_CONTENT: `${icon('dashboard')} Dashboard`,
+  CONTENT: `${emo('🍰')} DASHBOARD CONTENT`,
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 });

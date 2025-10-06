@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@symbiotejs/symbiote": "^2.3.3",
-    "jsda-kit": "^0.3.5"
+    "jsda-kit": "^0.3.6"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
