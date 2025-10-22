@@ -1,6 +1,6 @@
 {
   "name": "jsda-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JSDA project template",
   "keywords": [
     "jsda",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@symbiotejs/symbiote": "^2.3.3",
-    "jsda-kit": "^0.3.6"
+    "jsda-kit": "^0.4.1"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
