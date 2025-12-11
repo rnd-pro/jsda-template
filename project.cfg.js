@@ -38,6 +38,6 @@ export default {
     ],
     srcSchema: 'https://cdn.jsdelivr.net/npm/{pkg-name}/+esm',
     polyfills: false,
-    preload: true,
+    preload: false,
   },
 }

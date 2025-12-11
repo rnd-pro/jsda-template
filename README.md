@@ -4,12 +4,12 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
 ![JSDA Kit](https://img.shields.io/badge/jsda--kit-0.3.6-orange)
-![Symbiote.js](https://img.shields.io/badge/Symbiote.js-2.3.3-orange)
-![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-0.1.4-orange)
+![Symbiote.js](https://img.shields.io/badge/Symbiote.js-2.3.4-orange)
+![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-0.1.5-orange)
 
-This repository serves as a comprehensive template for kickstarting modern web projects using the **JSDAStack**. It is pre-configured for a seamless development experience, featuring Static Site Generation (SSG), Server-Side Rendering (SSR) with web components, and optional TypeScript support.
+This repository serves as a comprehensive template for kickstarting modern web projects using the **JSDA-Stack**. It is pre-configured for a seamless development experience, featuring Static Site Generation (SSG), Server-Side Rendering (SSR) with web components, and TypeScript support.
 
-## 🚀 Core Features
+## 🚀 Core Features 
 
 - **Hybrid Rendering**: Full support for both SSG and SSR, allowing for flexible and performant web applications.
 - **Web Components**: Leverages the [Symbiote.js](https://symbiotejs.org/) framework for creating reusable and encapsulated components.
@@ -75,12 +75,12 @@ The project is organized into the following main directories:
 ### Development Servers
 
 -   **Static Site Development (SSG)**:
-    This command starts a development server for the static site with hot-reloading.
+    This command starts a watcher and renders static pages.
     ```bash
-    jsda ssr
+    jsda ssg
     ```
 
--   **Dynamic Application Development (SSR)**:
+-   **Dynamic Application Development**:
     This command starts the dynamic application server.
     ```bash
     jsda serve
@@ -88,7 +88,7 @@ The project is organized into the following main directories:
 
 ## ⚙️ Configuration
 
-The project's behavior is controlled by the `project.cfg.js` file. Here you can configure the dynamic and static parts of the application, minification, bundling, and import maps.
+The project's behavior is controlled by the `project.cfg.js` file. Here you can configure the dynamic and static parts of the application, minification, bundling, and import maps automated generation.
 
 The `cit-config.json` file is used to configure the Cloud Images Toolkit. For more information, please refer to the [official documentation](https://github.com/rnd-pro/cloud-images-toolkit).
 
@@ -120,11 +120,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🔗 Useful Links
 
--   [JSDAStack Documentation](https://github.com/rnd-pro/jsda)
--   [Symbiote.js Framework](https://symbiotejs.org/)
+-   [JSDA Manifest](https://github.com/rnd-pro/jsda)
+-   [Symbiote.js](https://rnd-pro.com/symbiote/)
 -   [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
 -   [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit)
 
 ---
 
-**Happy coding with JSDAStack! 🎉**
+**Happy coding with JSDA-Stack! 🎉**

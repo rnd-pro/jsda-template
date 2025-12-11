@@ -1,12 +1,14 @@
 {
   "name": "jsda-template",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "JSDA project template",
   "keywords": [
     "jsda",
     "jsda-kit",
     "symbiote.js",
     "template",
+    "cit",
+    "cloud-images-toolkit",
     "rnd-pro.com"
   ],
   "homepage": "https://github.com/rnd-pro/jsda-template#readme",
@@ -25,11 +27,11 @@
     "test": "test"
   },
   "dependencies": {
-    "@symbiotejs/symbiote": "^2.3.3",
-    "jsda-kit": "^0.4.6"
+    "@symbiotejs/symbiote": "^2.3.4",
+    "jsda-kit": "^0.4.18"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
-    "cloud-images-toolkit": "^0.1.4"
+    "cloud-images-toolkit": "^0.1.5"
   }
 }
