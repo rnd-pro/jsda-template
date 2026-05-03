@@ -47,4 +47,13 @@ export default {
     polyfills: false,
     preload: false,
   },
+  sitemap: {
+    enabled: true,
+    baseUrl: 'https://my-site.com/',
+    exclude: [
+      '/dashboard/',
+      '/404/',
+      '/login/',
+    ],
+  },
 }
