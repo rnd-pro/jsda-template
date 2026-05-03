@@ -2,6 +2,8 @@ import Symbiote from '@symbiotejs/symbiote';
 import template from './ssr-tpl.js';
 
 export class SidePanel extends Symbiote {
+  
+  // ISO-flag related documentation: https://github.com/symbiotejs/symbiote.js/blob/main/docs/flags.md#isomode
   isoMode = true;
 
   renderCallback() {

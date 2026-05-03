@@ -1,4 +1,4 @@
-import LoginWidgetStyles from '../../lib/components/login-widget/styles.css.js';
+import LoginWidgetStyles from '../../components/iso/login-widget/styles.css.js';
 import iconsCss from '../../lib/icons/icons.css.js';
 import common from '../../lib/css/common.css.js';
 
