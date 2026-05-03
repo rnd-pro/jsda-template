@@ -1,7 +1,7 @@
 {
   "name": "jsda-template",
   "version": "0.1.0",
-  "description": "JSDA project template",
+  "description": "JSDA-Kit project template",
   "keywords": [
     "jsda",
     "jsda-kit",
@@ -22,12 +22,10 @@
   "license": "MIT",
   "author": "team@rnd-pro.com",
   "type": "module",
-  "main": "index.js",
   "scripts": {
     "test": "test"
   },
   "dependencies": {
-    "@symbiotejs/symbiote": "^3.6.0",
     "jsda-kit": "^1.4.0"
   },
   "devDependencies": {
