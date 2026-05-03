@@ -1,6 +1,4 @@
 import fs from 'fs';
-// SSR for Web Components
-import { wcSsr } from 'jsda-kit/node/wcSsr.js';
 // Apply data to template
 import { applyData } from 'jsda-kit/iso/applyData.js';
 // Importmap generation
@@ -10,7 +8,7 @@ import iconsLink from '../lib/icons/link.html.js';
 
 let template = fs.readFileSync(new URL('./tpl/login.tpl.html', import.meta.url), 'utf-8');
 
-export default applyData(await wcSsr(template, './src/lib/components/{tag-name}/ssr-tpl.js', {}), {
+export default applyData(template, {
   IMPORTMAP,
   ICONS_LINK: iconsLink,
   TITLE: 'Login Page',

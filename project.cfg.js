@@ -19,6 +19,13 @@ export default {
     outputDir: './dist',
     sourceDir: './src/static',
   },
+  ssr: {
+    enabled: true,
+    imports: [
+      './src/components/iso/exports.js',
+      './src/components/server-only/exports.js',
+    ],
+  },
   minify: {
     js: true,
     css: true,

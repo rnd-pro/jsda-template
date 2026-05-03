@@ -1,4 +1,4 @@
-import { icon } from '../../icons/icon.js';
+import { icon } from '../../../lib/icons/icon.js';
 
 const menuData = [
   {

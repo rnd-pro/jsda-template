@@ -1,7 +1,8 @@
 import Symbiote from '@symbiotejs/symbiote';
+import template from './ssr-tpl.js';
 
 export class SidePanel extends Symbiote {
-  ssrMode = true;
+  isoMode = true;
 
   renderCallback() {
     let menuItems = [...this.querySelectorAll('a')];
@@ -19,4 +20,5 @@ export class SidePanel extends Symbiote {
   }
 }
 
+SidePanel.template = template;
 SidePanel.reg('side-panel');

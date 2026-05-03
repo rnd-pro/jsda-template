@@ -1,6 +1,4 @@
 import fs from 'fs';
-// SSR for Web Components
-import { wcSsr } from 'jsda-kit/node/wcSsr.js';
 // Apply data to template
 import { applyData } from 'jsda-kit/iso/applyData.js';
 // Importmap generation
@@ -16,7 +14,7 @@ import { emo } from '../lib/emoji/emo.js';
 
 let template = fs.readFileSync(new URL('./tpl/dashboard.tpl.html', import.meta.url), 'utf-8');
 
-export default applyData(await wcSsr(template, './src/components/{tag-name}/ssr-tpl.js', {}), {
+export default applyData(template, {
   IMPORTMAP,
   ICONS_LINK,
   EMOJI_LINK,

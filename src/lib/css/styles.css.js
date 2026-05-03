@@ -1,11 +1,6 @@
 import codeStyles from './code.css.js'; // Auto-generated code highlighting styles
 import common from './common.css.js';
 
-// Collect all component styles:
-const components = Object.values(await import('../components/exports.css.js')).map((m) => {
-  return m.default;
-}).join('\n');
-
 export default /*css*/ `
 ${common}
 
@@ -44,5 +39,5 @@ footer {
 }
 
 ${codeStyles}
-${components}
+${(await import('../../components/iso/side-panel/styles.css.js')).default}
 `;
