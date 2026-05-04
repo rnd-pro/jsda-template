@@ -16,6 +16,7 @@ A starter template for building modern web projects with the **JSDA-Stack**. Pre
 - **Route-Level Asset Co-location** — each dynamic route keeps its template (`.tpl.html`), page generator (`.html.js`), and styles (`.css.js`) together.
 - **Automated Import Maps** — CDN-resolved import maps generated from `package.json` dependencies.
 - **Markdown to HTML** — static pages can pull and render remote or local Markdown files.
+- **Code Highlighting** — fenced code blocks in Markdown are syntax-highlighted at build time via [highlight.js](https://highlightjs.org/). The color scheme is auto-generated in `code.css.js` using HSL rotation.
 - **Asset Minification & Bundling** — on-the-fly minification of JS, CSS, HTML, and SVG with configurable excludes.
 - **Sitemap Generation** — automatic `sitemap.xml` output during SSG builds with exclude patterns.
 - **Cloud Image Management** — integrated [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit) for image publishing and CDN delivery.
@@ -28,52 +29,52 @@ A starter template for building modern web projects with the **JSDA-Stack**. Pre
 .
 ├── src/
 │   ├── common-styles/              # Shared CSS modules (design tokens, code highlighting)
-│   │   ├── common.css.js           #   Base reset, CSS variables, typography
-│   │   ├── styles.css.js           #   Composed stylesheet (common + code + layout)
-│   │   └── code.css.js             #   Code block color scheme
+│   │   ├── common.css.js           # Base reset, CSS variables, typography
+│   │   ├── styles.css.js           # Composed stylesheet (common + code + layout)
+│   │   └── code.css.js             # Code block color scheme
 │   │
 │   ├── dynamic-pages/              # Dynamic application (SSR, served at runtime)
-│   │   ├── css/                    #   Global dynamic styles
+│   │   ├── css/                    # Global dynamic styles
 │   │   │   └── index.css.js
-│   │   ├── js/                     #   Client-side JS entry point
+│   │   ├── js/                     # Client-side JS entry point
 │   │   │   └── index.js
-│   │   ├── node/                   #   Server-side handlers (routing, data)
+│   │   ├── node/                   # Server-side handlers (routing, data)
 │   │   │   └── handlers.js
-│   │   └── routes/                 #   Route definitions & per-route assets
-│   │       ├── routes.js           #     Route map (path → .html.js module)
-│   │       ├── dashboard/          #     Dashboard route (template + styles + page)
-│   │       ├── login/              #     Login route
-│   │       ├── home/               #     Home route
-│   │       └── 404/                #     404 fallback route
+│   │   └── routes/                 # Route definitions & per-route assets
+│   │       ├── routes.js           # Route map (path → .html.js module)
+│   │       ├── dashboard/          # Dashboard route (template + styles + page)
+│   │       ├── login/              # Login route
+│   │       ├── home/               # Home route
+│   │       └── 404/                # 404 fallback route
 │   │
 │   ├── static-pages/               # Static site (SSG, built to dist/)
-│   │   ├── page.tpl.html           #   Base HTML template
-│   │   ├── getPage.js              #   Page generator utility
-│   │   ├── index.html.js           #   Root page definition
-│   │   ├── robots.txt              #   Robots file (copied to dist/ on build)
-│   │   ├── css/                    #   Static page styles
-│   │   ├── js/                     #   Static page scripts
-│   │   └── pages/                  #   Sub-pages (symbiote/, template/, cit/)
+│   │   ├── page.tpl.html           # Base HTML template
+│   │   ├── getPage.js              # Page generator utility
+│   │   ├── index.html.js           # Root page definition
+│   │   ├── robots.txt              # Robots file (copied to dist/ on build)
+│   │   ├── css/                    # Static page styles
+│   │   ├── js/                     # Static page scripts
+│   │   └── pages/                  # Sub-pages (symbiote/, template/, cit/)
 │   │
 │   ├── ui-components/              # Web component library
-│   │   ├── ssr-exports.js          #   Barrel file for SSR component registration
-│   │   ├── universal/              #   Isomorphic components (server + client)
+│   │   ├── ssr-exports.js          # Barrel file for SSR component registration
+│   │   ├── universal/              # Isomorphic components (server + client)
 │   │   │   ├── login-widget/
 │   │   │   └── side-panel/
-│   │   ├── client-only/            #   Browser-only components
+│   │   ├── client-only/            # Browser-only components
 │   │   │   └── client-counter/
-│   │   └── server-only/            #   Server-rendered-only components
+│   │   └── server-only/            # Server-rendered-only components
 │   │       └── server-info/
 │   │
 │   └── icons/                      # Icon system (Material Symbols)
-│       ├── collection.js           #   Icon name registry
-│       ├── icon.js                 #   Icon helper
-│       ├── icons.css.js            #   Icon styles
-│       └── link.html.js            #   <link> tag for Google Fonts injection
+│       ├── collection.js           # Icon name registry
+│       ├── icon.js                 # Icon helper
+│       ├── icons.css.js            # Icon styles
+│       └── link.html.js            # <link> tag for Google Fonts injection
 │
 ├── types/                          # TypeScript definitions
-│   ├── globals.d.ts                #   Global type declarations
-│   └── project.d.ts               #   Project-specific types
+│   ├── globals.d.ts                # Global type declarations
+│   └── project.d.ts                # Project-specific types
 │
 ├── cit/                            # Cloud Images Toolkit workspace
 ├── dist/                           # SSG build output
