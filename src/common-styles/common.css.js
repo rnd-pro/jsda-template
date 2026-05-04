@@ -30,6 +30,15 @@ html, body {
   color: var(--clr-2);
 }
 
+body {
+  opacity: 1;
+  transition: opacity 1s;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
 article {
   display: block;
   margin: auto;

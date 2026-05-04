@@ -32,7 +32,6 @@ side-panel {
     display: flex;
     gap: var(--gap-mid);
     align-items: center;
-    
     height: var(--ui-size);
     background-color: var(--clr-1);
     color: var(--clr-2);
@@ -47,6 +46,7 @@ side-panel {
     &[current] {
       background-color: var(--clr-2);
       color: var(--clr-1);
+      pointer-events: none;
     }
 
     &:hover {
