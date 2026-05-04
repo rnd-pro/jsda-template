@@ -24,6 +24,7 @@
   "type": "module",
   "scripts": {
     "test": "test",
+    "check:types": "npx tsc --noEmit",
     "copy-robots": "cp ./src/static-pages/robots.txt ./dist/robots.txt",
     "build": "npx jsda build && npm run copy-robots"
   },
