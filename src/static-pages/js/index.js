@@ -1,0 +1,1 @@
+import {} from '../../ui-components/universal/side-panel/logic.js';

@@ -1,16 +1,19 @@
-{
-  "syncDataPath": "./cit/cit-sync-data.json",
-  "imsDataPath": "./cit/ims-data.json",
-  "imgSrcFolder": "./cit/cit-store/",
-  "apiKeyPath": "./cit/CIT_API_KEY",
-  "projectId": "<YOUR_PROJECT_ID>",
-  "imgUrlTemplate": "https://<YOUR_DOMAIN>/images/{UID}/{VARIANT}",
-  "previewUrlTemplate": "https://<YOUR_DOMAIN>/images/{UID}/{VARIANT}",
-  "uploadUrlTemplate": "https://api.cloudflare.com/client/v4/accounts/{PROJECT}/images/v1",
-  "fetchUrlTemplate": "https://api.cloudflare.com/client/v4/accounts/{PROJECT}/images/v1/{UID}/blob",
-  "removeUrlTemplate": "https://api.cloudflare.com/client/v4/accounts/{PROJECT}/images/v1/{UID}",
-  "variants": ["120", "320", "640", "860", "1024", "1200", "2048", "max"],
-  "imgTypes": ["png", "jpg", "jpeg", "webp", "gif", "svg"],
-  "wsPort": 8080,
-  "httpPort": 8081
-}
+[
+  {
+    "name": "My Collection",
+    "cdn": "cloudflare",
+    "syncDataPath": "./cit-sync-data.json",
+    "imsDataFolder": "./ims-widgets/",
+    "imsDataMinify": true,
+    "imgSrcFolder": "./cit-store/",
+    "apiKeyPath": "./CIT_API_KEY",
+    "projectId": "<YOUR_PROJECT_ID>",
+    "imgUrlTemplate": "https://<YOUR_DOMAIN>/images/{UID}/{VARIANT}",
+    "previewUrlTemplate": "https://<YOUR_DOMAIN>/images/{UID}/{VARIANT}",
+    "imsUrlTemplate": "https://<YOUR_DOMAIN>/ims/{HASH}.json",
+    "variants": ["120", "320", "640", "860", "1024", "1200", "2048", "max"],
+    "imgTypes": ["png", "jpg", "jpeg", "webp", "gif", "svg"],
+    "wsPort": 8080,
+    "httpPort": 8081
+  }
+]

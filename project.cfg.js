@@ -1,29 +1,29 @@
-import { getDataFn, getRouteFn } from './src/dynamic/node/handlers.js';
+import { getDataFn, getRouteFn } from './src/dynamic-pages/node/handlers.js';
 
 /** @type { JSDA_CFG } */
 export default {
   dynamic: {
     port: 3000,
-    routes: './src/dynamic/routes.js',
+    routes: './src/dynamic-pages/routes/routes.js',
     cache: {
       inMemory: true,
       exclude: [
         '/dashboard/',
       ],
     },
-    baseDir: './src/dynamic/',
+    baseDir: './src/dynamic-pages/',
     getRouteFn,
     getDataFn,
   },
   static: {
     outputDir: './dist',
-    sourceDir: './src/static',
+    sourceDir: './src/static-pages',
   },
   ssr: {
     enabled: true,
     imports: [
-      './src/components/iso/exports.js',
-      './src/components/server-only/exports.js',
+      './src/ui-components/universal/exports.js',
+      './src/ui-components/server-only/exports.js',
     ],
   },
   minify: {
