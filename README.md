@@ -1,130 +1,184 @@
-# JSDAStack Template Repository
+# JSDA-Stack Template
 
 ![JSDAStack](https://img.shields.io/badge/JSDAStack-Template-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
-![JSDA Kit](https://img.shields.io/badge/jsda--kit-0.3.6-orange)
-![Symbiote.js](https://img.shields.io/badge/Symbiote.js-2.3.4-orange)
-![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-0.1.5-orange)
+![JSDA Kit](https://img.shields.io/badge/jsda--kit-1.4.0-orange)
+![Symbiote.js](https://img.shields.io/badge/Symbiote.js-3.6.0-orange)
+![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-1.3.2-orange)
 
-This repository serves as a comprehensive template for kickstarting modern web projects using the **JSDA-Stack**. It is pre-configured for a seamless development experience, featuring Static Site Generation (SSG), Server-Side Rendering (SSR) with web components, and TypeScript support.
+A starter template for building modern web projects with the **JSDA-Stack**. Pre-configured with Static Site Generation (SSG), Server-Side Rendering (SSR) of web components, dynamic routing with auth guards, and JSDoc-based TypeScript checking.
 
-## 🚀 Core Features 
+## Core Features
 
-- **Hybrid Rendering**: Full support for both SSG and SSR, allowing for flexible and performant web applications.
-- **Web Components**: Leverages the [Symbiote.js](https://symbiotejs.org/) framework for creating reusable and encapsulated components.
-- **TypeScript Integration**: Comes with a pre-configured `tsconfig.json` for optional static typing in your JavaScript code.
-- **Dynamic Routing**: The dynamic application part uses a simple yet powerful routing mechanism.
-- **Markdown Processing**: Built-in capabilities for rendering Markdown content.
-- **Component-Based Architecture**: A modular structure for building and maintaining your component library.
-- **ES Modules**: Utilizes native ES modules for a modern development workflow.
-- **Asset Optimization**: On-the-fly minification and bundling for JavaScript, CSS, HTML, and SVG assets.
-- **Cloud Image Management**: Integrated with the [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit) for efficient image handling and optimization.
+- **Hybrid Rendering** — SSG for public content, dynamic SSR for authenticated areas, all powered by a single `project.cfg.js`.
+- **Web Components** — [Symbiote.js](https://symbiotejs.org/) components split into three tiers: `universal` (isomorphic), `client-only`, and `server-only`.
+- **Route-Level Asset Co-location** — each dynamic route keeps its template (`.tpl.html`), page generator (`.html.js`), and styles (`.css.js`) together.
+- **Automated Import Maps** — CDN-resolved import maps generated from `package.json` dependencies.
+- **Markdown to HTML** — static pages can pull and render remote or local Markdown files.
+- **Asset Minification & Bundling** — on-the-fly minification of JS, CSS, HTML, and SVG with configurable excludes.
+- **Sitemap Generation** — automatic `sitemap.xml` output during SSG builds with exclude patterns.
+- **Cloud Image Management** — integrated [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit) for image publishing and CDN delivery.
+- **Icon System** — centralized Material Symbols icon collection with auto-injected link tags.
+- **TypeScript Support** — JSDoc types checked via `tsconfig.json`; no compilation step required.
 
-## 📁 Project Structure
-
-The project is organized into the following main directories:
+## Project Structure
 
 ```
 .
-├── cit/                     # Cloud Images Toolkit data and configuration
-├── dist/                    # Build output for the static site
 ├── src/
-│   ├── dynamic/             # Dynamic application source code (SSR)
-│   │   ├── browser/         # Client-side JavaScript for dynamic pages
-│   │   ├── css/             # CSS for dynamic pages
-│   │   ├── node/            # Node.js handlers for data and routing
-│   │   └── tpl/             # HTML templates for dynamic pages
-│   ├── lib/                 # Shared libraries and components
-│   │   ├── components/      # Reusable web components
-│   │   ├── css/             # Common stylesheets
-│   │   ├── emoji/           # Emoji-related assets
-│   │   └── icons/           # Icon library
-│   ├── md/                  # Markdown content files
-│   └── static/              # Static site source code (SSG)
-│       ├── css/             # CSS for static pages
-│       ├── js/              # JavaScript for static pages
-│       └── pages/           # Page definitions for the static site
-├── types/                   # Project-wide TypeScript type definitions
-├── project.cfg.js           # Main project configuration file
-├── cit-config.json          # Configuration for the Cloud Images Toolkit
-├── tsconfig.json            # TypeScript configuration
-└── package.json             # Project dependencies and scripts
+│   ├── common-styles/              # Shared CSS modules (design tokens, code highlighting)
+│   │   ├── common.css.js           #   Base reset, CSS variables, typography
+│   │   ├── styles.css.js           #   Composed stylesheet (common + code + layout)
+│   │   └── code.css.js             #   Code block color scheme
+│   │
+│   ├── dynamic-pages/              # Dynamic application (SSR, served at runtime)
+│   │   ├── css/                    #   Global dynamic styles
+│   │   │   └── index.css.js
+│   │   ├── js/                     #   Client-side JS entry point
+│   │   │   └── index.js
+│   │   ├── node/                   #   Server-side handlers (routing, data)
+│   │   │   └── handlers.js
+│   │   └── routes/                 #   Route definitions & per-route assets
+│   │       ├── routes.js           #     Route map (path → .html.js module)
+│   │       ├── dashboard/          #     Dashboard route (template + styles + page)
+│   │       ├── login/              #     Login route
+│   │       ├── home/               #     Home route
+│   │       └── 404/                #     404 fallback route
+│   │
+│   ├── static-pages/               # Static site (SSG, built to dist/)
+│   │   ├── page.tpl.html           #   Base HTML template
+│   │   ├── getPage.js              #   Page generator utility
+│   │   ├── index.html.js           #   Root page definition
+│   │   ├── robots.txt              #   Robots file (copied to dist/ on build)
+│   │   ├── css/                    #   Static page styles
+│   │   ├── js/                     #   Static page scripts
+│   │   └── pages/                  #   Sub-pages (symbiote/, template/, cit/)
+│   │
+│   ├── ui-components/              # Web component library
+│   │   ├── ssr-exports.js          #   Barrel file for SSR component registration
+│   │   ├── universal/              #   Isomorphic components (server + client)
+│   │   │   ├── login-widget/
+│   │   │   └── side-panel/
+│   │   ├── client-only/            #   Browser-only components
+│   │   │   └── client-counter/
+│   │   └── server-only/            #   Server-rendered-only components
+│   │       └── server-info/
+│   │
+│   └── icons/                      # Icon system (Material Symbols)
+│       ├── collection.js           #   Icon name registry
+│       ├── icon.js                 #   Icon helper
+│       ├── icons.css.js            #   Icon styles
+│       └── link.html.js            #   <link> tag for Google Fonts injection
+│
+├── types/                          # TypeScript definitions
+│   ├── globals.d.ts                #   Global type declarations
+│   └── project.d.ts               #   Project-specific types
+│
+├── cit/                            # Cloud Images Toolkit workspace
+├── dist/                           # SSG build output
+├── secrets/                        # Sensitive data (git-ignored)
+│
+├── project.cfg.js                  # Main project configuration
+├── cit-config.json                 # Cloud Images Toolkit configuration
+├── tsconfig.json                   # TypeScript / JSDoc checking
+└── package.json
 ```
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js version 18 or higher
-- npm or yarn package manager
+- Node.js ≥ 20
+- npm
 
 ### Installation
 
-1.  **Create a new repository** from this template or clone it:
-    ```bash
-    git clone https://github.com/rnd-pro/jsda-template.git my-project
-    cd my-project
-    ```
+```bash
+# Clone the template
+git clone https://github.com/rnd-pro/jsda-template.git my-project
+cd my-project
 
-2.  **Install the dependencies**:
-    ```bash
-    npm install
-    ```
-
-### Development Servers
-
--   **Static Site Development (SSG)**:
-    This command starts a watcher and renders static pages.
-    ```bash
-    jsda ssg
-    ```
-
--   **Dynamic Application Development**:
-    This command starts the dynamic application server.
-    ```bash
-    jsda serve
-    ```
-
-## ⚙️ Configuration
-
-The project's behavior is controlled by the `project.cfg.js` file. Here you can configure the dynamic and static parts of the application, minification, bundling, and import maps automated generation.
-
-The `cit-config.json` file is used to configure the Cloud Images Toolkit. For more information, please refer to the [official documentation](https://github.com/rnd-pro/cloud-images-toolkit).
-
-## 📦 Key Dependencies
-
-### Core
-
--   **[@symbiotejs/symbiote](https://symbiotejs.org/)**: A lightweight and powerful framework for creating web components.
--   **[jsda-kit](https://github.com/rnd-pro/jsda-kit)**: The development toolkit for JSDAStack projects.
+# Install dependencies
+npm install
+```
 
 ### Development
 
--   **[@types/node](https://www.npmjs.com/package/@types/node)**: Type definitions for Node.js.
--   **[cloud-images-toolkit](https://github.com/rnd-pro/cloud-images-toolkit)**: A toolkit for managing and publishing images to the cloud.
+**Dynamic app** (JSDA server + SSR for web components):
 
-## 🤝 Contributing
+```bash
+npx jsda serve
+```
 
-Contributions are welcome! Please follow these steps:
+The server starts at `http://localhost:3000`. Routes are defined in `src/dynamic-pages/routes/routes.js`.
 
-1.  Fork the repository.
-2.  Create a new feature branch (`git checkout -b feature/your-feature`).
-3.  Commit your changes (`git commit -m 'Add your feature'`).
-4.  Push to the branch (`git push origin feature/your-feature`).
-5.  Open a Pull Request.
+**Static site** (SSG build with watcher + SSR for web components):
 
-## 📄 License
+```bash
+npx jsda ssg
+```
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Output goes to `dist/`.
 
-## 🔗 Useful Links
+### Production Build
 
--   [JSDA Manifest](https://github.com/rnd-pro/jsda)
--   [Symbiote.js](https://rnd-pro.com/symbiote/)
--   [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
--   [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit)
+```bash
+npm run build
+```
 
----
+Runs `jsda build` and copies `robots.txt` to the output directory.
 
-**Happy coding with JSDA-Stack! 🎉**
+## Configuration
+
+All project behavior is controlled via `project.cfg.js`:
+
+| Section | Purpose |
+|---|---|
+| `dynamic` | Dev server port, route map, base directory, cache rules, request handlers |
+| `static` | SSG source and output directories |
+| `ssr` | Toggle SSR and list component barrel imports |
+| `minify` | Per-format minification flags (JS, CSS, HTML, SVG) with excludes |
+| `bundle` | JS/CSS bundling toggles with excludes |
+| `importmap` | Auto-generated import map from npm packages via CDN |
+| `sitemap` | Sitemap generation with base URL and route excludes |
+| `log` | Enable/disable request logging |
+
+Cloud Images Toolkit is configured separately in `cit-config.json`. See the [CIT documentation](https://github.com/rnd-pro/cloud-images-toolkit) for details.
+
+## File Conventions
+
+| Pattern | Purpose |
+|---|---|
+| `*.html.js` | Page generator — default export is an HTML string |
+| `*.css.js` | CSS module — default export is a CSS string |
+| `*.tpl.html` | Static HTML template with `{[PLACEHOLDER]}` syntax |
+| `logic.js` | Component logic (Symbiote.js class + registration) |
+| `template.js` | Component HTML template |
+| `styles.js` | Component scoped styles |
+
+## Key Dependencies
+
+| Package | Role |
+|---|---|
+| [`jsda-kit`](https://github.com/rnd-pro/jsda-kit) | Build toolkit — SSG, SSR, dev server, minification, bundling, import maps |
+| [`@symbiotejs/symbiote`](https://symbiotejs.org/) | Web component framework (loaded via CDN import map) |
+| [`cloud-images-toolkit`](https://github.com/rnd-pro/cloud-images-toolkit) | Image management and cloud publishing (dev dependency) |
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push and open a Pull Request
+
+## License
+
+MIT — see [LICENSE](LICENSE).
+
+## Links
+
+- [JSDA Manifest](https://github.com/rnd-pro/jsda)
+- [Symbiote.js](https://symbiotejs.org/)
+- [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
+- [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit)
