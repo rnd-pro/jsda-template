@@ -106,6 +106,14 @@ To enable it:
 
 Live demo: https://rnd-pro.github.io/jsda-template/
 
+## IDE Setup
+
+JSDA relies heavily on JavaScript template literals for HTML and CSS (e.g., `/*html*/`, `/*css*/`, or using `html\`` and `css\`` template tags). 
+
+For the best developer experience, we strongly recommend enabling syntax highlighting for these template strings in your IDE. 
+
+If you are using **VS Code**, install the [es6-string-html](https://github.com/0x00000001A/es6-string-html) extension. This will automatically highlight HTML and CSS embedded inside your JavaScript files.
+
 ## Configuration
 
 All project behavior is controlled via `project.cfg.js`:
