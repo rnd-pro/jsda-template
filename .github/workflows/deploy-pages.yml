@@ -27,6 +27,8 @@ jobs:
 
       - run: npm ci
 
+      - run: mkdir -p secrets && echo "export default '';" > secrets/access.js
+
       - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
