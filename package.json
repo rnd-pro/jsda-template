@@ -23,7 +23,9 @@
   "author": "team@rnd-pro.com",
   "type": "module",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "copy-robots": "cp ./src/static-pages/robots.txt ./dist/robots.txt",
+    "build": "npx jsda build && npm run copy-robots"
   },
   "dependencies": {
     "jsda-kit": "^1.4.0"

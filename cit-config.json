@@ -1,12 +1,12 @@
 [
   {
-    "name": "My Collection",
+    "name": "Collection Name",
     "cdn": "cloudflare",
-    "syncDataPath": "./cit-sync-data.json",
-    "imsDataFolder": "./ims-widgets/",
+    "syncDataPath": "./cit/cit-sync-data.json",
+    "imsDataFolder": "./cit/ims-widgets-data/",
     "imsDataMinify": true,
-    "imgSrcFolder": "./cit-store/",
-    "apiKeyPath": "./CIT_API_KEY",
+    "imgSrcFolder": "./cit/cit-store/",
+    "apiKeyPath": "./cit/CIT_API_KEY",
     "projectId": "<YOUR_PROJECT_ID>",
     "imgUrlTemplate": "https://<YOUR_DOMAIN>/images/{UID}/{VARIANT}",
     "previewUrlTemplate": "https://<YOUR_DOMAIN>/images/{UID}/{VARIANT}",

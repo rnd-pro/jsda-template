@@ -1,5 +1,11 @@
-import codeStyles from './code.css.js'; // Auto-generated code highlighting styles
+// Common rules
 import common from './common.css.js';
+
+// UI Components
+import sidePanelStyles from '../ui-components/universal/side-panel/styles.css.js';
+
+// Code highlighting styles
+import codeStyles from './code.css.js'; // Auto-generated color scheme
 
 export default /*css*/ `
 ${common}
@@ -39,5 +45,5 @@ footer {
 }
 
 ${codeStyles}
-${(await import('../ui-components/universal/side-panel/styles.css.js')).default}
+${sidePanelStyles}
 `;

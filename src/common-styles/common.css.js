@@ -80,7 +80,7 @@ article {
       display: block;
       padding: 10px;
       padding-left: 30px;
-      border-left: var(--gap-min)solid currentColor;
+      border-left: var(--gap-min) solid currentColor;
       margin-bottom: 0;
 
       &::before {
