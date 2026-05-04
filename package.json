@@ -28,7 +28,7 @@
     "build": "npx jsda build && npm run copy-robots"
   },
   "dependencies": {
-    "jsda-kit": "^1.4.0"
+    "jsda-kit": "^1.5.0"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
