@@ -1,4 +1,5 @@
 import Symbiote from '@symbiotejs/symbiote';
+import styles from './styles.css.js';
 import template from './template.js';
 
 export class SidePanel extends Symbiote {
@@ -23,5 +24,6 @@ export class SidePanel extends Symbiote {
   }
 }
 
+SidePanel.rootStyles = styles;
 SidePanel.template = template;
 SidePanel.reg('side-panel');
