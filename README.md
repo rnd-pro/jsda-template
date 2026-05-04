@@ -114,7 +114,7 @@ For the best developer experience, we strongly recommend enabling syntax highlig
 
 If you are using **VS Code**, install the [es6-string-html](https://github.com/0x00000001A/es6-string-html) extension. This will automatically highlight HTML and CSS embedded inside your JavaScript files.
 
-### Optional: Local TypeScript Checking
+### Optional TypeScript Setup
 
 JSDA-Stack Template uses JSDoc annotations within standard JavaScript files to provide type safety via TypeScript. If you do not have TypeScript installed globally or supported natively in your IDE, you can still run type checks locally.
 
