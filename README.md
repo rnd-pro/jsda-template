@@ -35,7 +35,7 @@ Almost everything in this template - from Static Site Generation (SSG) and Serve
 .
 ├── src/
 │   ├── common-styles/              # Shared CSS modules and design tokens
-│   ├── dynamic-pages/              # Dynamic application (routing, route handlers, hybrid rendering)
+│   ├── dynamic-pages/              # Dynamic application (JSDA server endpoints)
 │   ├── static-pages/               # Static site generation (SSG) sources
 │   ├── ui-components/              # Web components (universal, client-only, server-only)
 │   └── icons/                      # Centralized Material Symbols configuration
