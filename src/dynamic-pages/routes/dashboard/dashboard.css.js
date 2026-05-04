@@ -9,6 +9,10 @@ main {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - var(--ui-size) * 2);
+
+  [pie] {
+    font-size: 200px;
+  }
 }
 
 header {

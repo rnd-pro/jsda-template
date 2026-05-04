@@ -18,6 +18,6 @@ export default applyData(template, {
   CSS_PATH: './routes/dashboard/dashboard.css.js',
   JS_PATH: './js/index.js',
   HEADER_CONTENT: `${icon('dashboard')} Dashboard`,
-  CONTENT: /*html*/ `<div>🍰</div>`,
+  CONTENT: /*html*/ `<div pie>🍰</div>`,
   FOOTER_CONTENT: `&copy; ${new Date().getFullYear()}`,
 });
