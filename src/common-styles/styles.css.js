@@ -18,7 +18,8 @@ header {
   height: var(--calc-top-pan-height);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  font-size: 1.4rem;
   gap: var(--gap-max);
   z-index: 1000;
   background-color: var(--clr-1);
