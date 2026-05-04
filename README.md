@@ -9,7 +9,11 @@
 
 [![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue?logo=github)](https://rnd-pro.github.io/jsda-template/)
 
-A starter template for building modern web projects with the **JSDA-Stack**. Pre-configured with Static Site Generation (SSG), Server-Side Rendering (SSR) of web components, dynamic routing with auth guards, and JSDoc-based TypeScript checking.
+A starter template for building modern web projects with the **JSDA-Stack**. 
+
+**JSDA** (JavaScript Distributed Assets) is a development philosophy and stack designed to leverage native web technologies by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, JSON). 
+
+Everything in this template - from Static Site Generation (SSG) and Server-Side Rendering (SSR) of web components to dynamic routing, asset minification, and serving - is powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
 
 ## Core Features
 
