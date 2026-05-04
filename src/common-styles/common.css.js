@@ -14,7 +14,7 @@ export default /*css*/ `
   --ui-size: 40px;
   --col-w: 960px;
 
-  --calc-gap-aside: calc((100vw - var(--col-w)) / 2);
+  --calc-gap-aside: clamp(calc((100vw - var(--col-w)) / 2), var(--gap-max), var(--gap-max));
   --calc-top-pan-height: calc(var(--ui-size) + var(--gap-mid) * 2);
 }
 
