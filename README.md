@@ -13,12 +13,12 @@ A starter template for building modern web projects with the **JSDA-Stack**.
 
 **JSDA** (JavaScript Distributed Assets) is a development philosophy and stack designed to leverage native web technologies by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, JSON). 
 
-Everything in this template - from Static Site Generation (SSG) and Server-Side Rendering (SSR) of web components to dynamic routing, asset minification, and serving - is powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
+Almost everything in this template - from Static Site Generation (SSG) and Server-Side Rendering (SSR) of Web Components to dynamic routing, asset minification, and serving - is powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
 
 ## Core Features
 
-- **Hybrid Rendering** — SSG for public content, dynamic SSR for authenticated areas, all powered by a single `project.cfg.js`.
-- **Web Components** — [Symbiote.js](https://symbiotejs.org/) components split into three tiers: `universal` (isomorphic), `client-only`, and `server-only`.
+- **Hybrid Rendering** — SSG for public content, dynamic SSR for authenticated areas, all powered by a simple configuration (`project.cfg.js`).
+- **Web Components** — [Symbiote.js](https://github.com/symbiotejs/symbiote.js) components split into three tiers: `universal` (isomorphic), `client-only`, and `server-only`.
 - **Route-Level Asset Co-location** — each dynamic route keeps its template (`.tpl.html`), page generator (`.html.js`), and styles (`.css.js`) together.
 - **Automated Import Maps** — CDN-resolved import maps generated from `package.json` dependencies.
 - **Markdown to HTML** — static pages can pull and render remote or local Markdown files.
@@ -197,6 +197,6 @@ MIT — see [LICENSE](LICENSE).
 ## Links
 
 - [JSDA Manifest](https://github.com/rnd-pro/jsda)
-- [Symbiote.js](https://symbiotejs.org/)
+- [Symbiote.js](https://github.com/symbiotejs/symbiote.js)
 - [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
 - [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit)
