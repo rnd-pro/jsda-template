@@ -7,6 +7,8 @@
 ![Symbiote.js](https://img.shields.io/badge/Symbiote.js-3.6.0-orange)
 ![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-1.3.2-orange)
 
+[![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue?logo=github)](https://rnd-pro.github.io/jsda-template/)
+
 A starter template for building modern web projects with the **JSDA-Stack**. Pre-configured with Static Site Generation (SSG), Server-Side Rendering (SSR) of web components, dynamic routing with auth guards, and JSDoc-based TypeScript checking.
 
 ## Core Features
@@ -129,6 +131,17 @@ npm run build
 ```
 
 Runs `jsda build` and copies `robots.txt` to the output directory.
+
+### GitHub Pages
+
+A GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) is included. It builds the static site and deploys `dist/` to GitHub Pages on every push to `main`.
+
+To enable it:
+
+1. Go to your repo **Settings → Pages → Source** and select **GitHub Actions**.
+2. Push to `main` — the workflow will build and deploy automatically.
+
+Live demo: https://rnd-pro.github.io/jsda-template/
 
 ## Configuration
 
