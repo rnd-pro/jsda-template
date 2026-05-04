@@ -1,4 +1,5 @@
 import Symbiote from '@symbiotejs/symbiote';
+import styles from './styles.css.js';
 import template from './template.js';
 
 export class LoginWidget extends Symbiote {
@@ -24,5 +25,6 @@ export class LoginWidget extends Symbiote {
   }
 }
 
+LoginWidget.rootStyles = styles;
 LoginWidget.template = template;
 LoginWidget.reg('login-widget');
