@@ -78,11 +78,11 @@ article {
   }
 
   ul {
-  position: relative;
-  list-style-type: none;
-  padding: 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     li {
       position: relative;
@@ -103,6 +103,18 @@ article {
         color: currentColor;
         margin-right: var(--gap-mid);
       }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    th, td {
+      padding: var(--gap-mid);
+      border: var(--gap-min) solid currentColor;
     }
   }
 }
