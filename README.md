@@ -2,7 +2,7 @@
 
 ![JSDAStack](https://img.shields.io/badge/JSDAStack-Template-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 ![JSDA Kit](https://img.shields.io/badge/jsda--kit-1.4.0-orange)
 ![Symbiote.js](https://img.shields.io/badge/Symbiote.js-3.6.0-orange)
 ![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-1.3.2-orange)
