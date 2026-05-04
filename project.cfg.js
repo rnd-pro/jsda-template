@@ -22,8 +22,7 @@ export default {
   ssr: {
     enabled: true,
     imports: [
-      './src/ui-components/universal/exports.js',
-      './src/ui-components/server-only/exports.js',
+      './src/ui-components/ssr-exports.js',
     ],
   },
   minify: {
