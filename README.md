@@ -34,57 +34,16 @@ Almost everything in this template - from Static Site Generation (SSG) and Serve
 ```
 .
 ├── src/
-│   ├── common-styles/              # Shared CSS modules (design tokens, code highlighting)
-│   │   ├── common.css.js           # Base reset, CSS variables, typography
-│   │   ├── styles.css.js           # Composed stylesheet (common + code + layout)
-│   │   └── code.css.js             # Code block color scheme
-│   │
-│   ├── dynamic-pages/              # Dynamic application (SSR, served at runtime)
-│   │   ├── css/                    # Global dynamic styles
-│   │   │   └── index.css.js
-│   │   ├── js/                     # Client-side JS entry point
-│   │   │   └── index.js
-│   │   ├── node/                   # Server-side handlers (routing, data)
-│   │   │   └── handlers.js
-│   │   └── routes/                 # Route definitions & per-route assets
-│   │       ├── routes.js           # Route map (path → .html.js module)
-│   │       ├── dashboard/          # Dashboard route (template + styles + page)
-│   │       ├── login/              # Login route
-│   │       ├── home/               # Home route
-│   │       └── 404/                # 404 fallback route
-│   │
-│   ├── static-pages/               # Static site (SSG, built to dist/)
-│   │   ├── page.tpl.html           # Base HTML template
-│   │   ├── getPage.js              # Page generator utility
-│   │   ├── index.html.js           # Root page definition
-│   │   ├── robots.txt              # Robots file (copied to dist/ on build)
-│   │   ├── css/                    # Static page styles
-│   │   ├── js/                     # Static page scripts
-│   │   └── pages/                  # Sub-pages (symbiote/, template/, cit/)
-│   │
-│   ├── ui-components/              # Web component library
-│   │   ├── ssr-exports.js          # Barrel file for SSR component registration
-│   │   ├── universal/              # Isomorphic components (server + client)
-│   │   │   ├── login-widget/
-│   │   │   └── side-panel/
-│   │   ├── client-only/            # Browser-only components
-│   │   │   └── client-counter/
-│   │   └── server-only/            # Server-rendered-only components
-│   │       └── server-info/
-│   │
-│   └── icons/                      # Icon system (Material Symbols)
-│       ├── collection.js           # Icon name registry
-│       ├── icon.js                 # Icon helper
-│       ├── icons.css.js            # Icon styles
-│       └── link.html.js            # <link> tag for Google Fonts injection
+│   ├── common-styles/              # Shared CSS modules and design tokens
+│   ├── dynamic-pages/              # Dynamic application (routing, route handlers, hybrid rendering)
+│   ├── static-pages/               # Static site generation (SSG) sources
+│   ├── ui-components/              # Web components (universal, client-only, server-only)
+│   └── icons/                      # Centralized Material Symbols configuration
 │
-├── types/                          # TypeScript definitions
-│   ├── globals.d.ts                # Global type declarations
-│   └── project.d.ts                # Project-specific types
-│
+├── types/                          # TypeScript definitions (JSDoc)
 ├── cit/                            # Cloud Images Toolkit workspace
-├── dist/                           # SSG build output
-├── secrets/                        # Sensitive data (git-ignored)
+├── dist/                           # Output directory for the static build
+├── secrets/                        # Sensitive data (e.g. auth configurations)
 │
 ├── project.cfg.js                  # Main project configuration
 ├── cit-config.json                 # Cloud Images Toolkit configuration
