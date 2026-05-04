@@ -19,6 +19,10 @@ const menuData = [
   },
 ];
 
+let links = menuData.map(
+  item => /*html*/ `<a href="${item.path}">${icon('arrow_forward')} ${item.name}</a>`
+).join('');
+
 export default /*html*/ `
-${menuData.map(item => `<a href="${item.path}">${icon('arrow_forward')} ${item.name}</a>`).join('')}
+${links}<div collapsed-btn>${icon('chevron_right')}</div>
 `;

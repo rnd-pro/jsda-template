@@ -10,4 +10,5 @@ export default {
   arrow_forward: 'arrow_forward',
   arrow_back: 'arrow_back',
   dashboard: 'dashboard',
+  chevron_right: 'chevron_right',
 };
