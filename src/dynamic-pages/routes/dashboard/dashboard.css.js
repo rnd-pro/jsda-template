@@ -1,6 +1,5 @@
 import common from '../../../common-styles/common.css.js';
 import iconsCss from '../../../icons/icons.css.js';
-import emojiCss from '../../../lib/emoji/emoji.css.js';
 
 export default /*css*/ `
 ${common}
@@ -38,7 +37,4 @@ div[emostration] > [emoji] {
 
 /* Icon Styles */
 ${iconsCss}
-
-/* Emoji Styles */
-${emojiCss}
 `;

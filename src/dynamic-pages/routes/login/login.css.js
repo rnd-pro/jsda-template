@@ -1,4 +1,3 @@
-import LoginWidgetStyles from '../../../ui-components/universal/login-widget/styles.css.js';
 import iconsCss from '../../../icons/icons.css.js';
 import common from '../../../common-styles/common.css.js';
 
@@ -31,9 +30,6 @@ footer {
   color: var(--clr-1);
   padding: 0 var(--gap-max);
 }
-
-/* Component Styles */
-${LoginWidgetStyles}
 
 /* Icon Styles */
 ${iconsCss}
