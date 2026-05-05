@@ -181,9 +181,9 @@ The double-extension pattern (`.[ext].js`) tells JSDA-Kit exactly what the final
 
 | Package | Role |
 |---|---|
-| [`jsda-kit`](https://github.com/rnd-pro/jsda-kit) | Build toolkit — SSG, SSR, dev server, minification, bundling, import maps |
-| [`@symbiotejs/symbiote`](https://symbiotejs.org/) | Web component framework (loaded via CDN import map) |
-| [`cloud-images-toolkit`](https://github.com/rnd-pro/cloud-images-toolkit) | Image management and cloud publishing (dev dependency) |
+| [`jsda-kit`](https://github.com/rnd-pro/jsda-kit) | Build toolkit — SSG, SSR, dev server, minification, bundling, import maps, sitemap, etc. |
+| [`@symbiotejs/symbiote`](https://github.com/symbiotejs/symbiote.js) | Light but powerful Web component library with SSR support and more... |
+| [`cloud-images-toolkit`](https://github.com/rnd-pro/cloud-images-toolkit) | Image management and cloud (Image CDN) publishing (dev dependency) |
 
 ## Contributing
 
@@ -194,7 +194,7 @@ The double-extension pattern (`.[ext].js`) tells JSDA-Kit exactly what the final
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT License © [rnd-pro.com](https://rnd-pro.com)
 
 ## Links
 
