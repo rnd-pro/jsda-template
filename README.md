@@ -69,13 +69,20 @@ Powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core under
 
 ### Installation
 
-```bash
-# Clone the template
-git clone https://github.com/rnd-pro/jsda-template.git my-project
-cd my-project
+#### Option 1: GitHub Template Repository
 
-# Install dependencies
-npm install
+Since this repository is a GitHub Template, you can simply click the green **[Use this template](https://github.com/new?template_name=jsda-template&template_owner=rnd-pro)** button at the top of the repository page to instantly generate your own repository based on this codebase.
+
+*(Alternatively, you can manually clone this repository and run `npm install`)*
+
+#### Option 2: Using the JSDA-Kit CLI
+
+The easiest way to start a new project is by using the JSDA-Kit built-in scaffolding tool. This command downloads the latest template and sets up your project structure.
+
+```bash
+mkdir my-project
+cd my-project
+npx jsda scaffold
 ```
 
 ### Development
