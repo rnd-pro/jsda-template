@@ -11,7 +11,7 @@
 
 A starter template for building modern web projects with the **JSDA-Stack**. 
 
-**JSDA** (JavaScript Distributed Assets) is a development philosophy and a set of solutions designed to leverage native web technologies by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, JSON). 
+**JSDA** (JavaScript Distributed Assets) is a development philosophy and a set of solutions designed to leverage native web technologies by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, MD, JSON, etc.). 
 
 Almost everything in this template - from Static Site Generation (SSG) and Server-Side Rendering (SSR) of Web Components to dynamic routing, asset minification, and serving - is powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
 
