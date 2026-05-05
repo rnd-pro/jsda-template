@@ -11,23 +11,23 @@
 
 A starter template for building modern web projects with the **JSDA-Stack**. 
 
-**JSDA** (JavaScript Distributed Assets) is a development philosophy and a set of solutions designed to leverage native web technologies by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, MD, JSON, etc.). 
+**JSDA** (JavaScript Distributed Assets) is a development philosophy and a set of solutions designed to leverage web standards by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, MD, JSON, etc.). 
 
-Almost everything in this template - from Static Site Generation (SSG) and Server-Side Rendering (SSR) of Web Components to dynamic routing, asset minification, and serving - is powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
+Powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
 
 ## Core Features
 
-- **Hybrid Rendering** — SSG for public content, dynamic SSR for authenticated areas, all powered by a simple configuration (`project.cfg.js`).
-- **Web Components** — [Symbiote.js](https://github.com/symbiotejs/symbiote.js) components split into three tiers: `universal` (isomorphic), `client-only`, and `server-only`.
-- **Route-Level Asset Co-location** — each dynamic route keeps its template (`.tpl.html`), page generator (`.html.js`), and styles (`.css.js`) together.
-- **Automated Import Maps** — CDN-resolved import maps generated from `package.json` dependencies.
-- **Markdown to HTML** — static pages can pull and render remote or local Markdown files.
-- **Code Highlighting** — fenced code blocks in Markdown are syntax-highlighted at build time via [highlight.js](https://highlightjs.org/). The color scheme is auto-generated in `code.css.js` using HSL rotation.
+- **Hybrid Rendering** — SSG for static pages, dynamic JSDA server, all with a simple configuration (`project.cfg.js`).
+- **SSR for Web Components** — [Symbiote.js](https://github.com/symbiotejs/symbiote.js) - isomorphic (universal), client-only or server-only components are supported.
+- **Powerful Isomorphic Application Data Management** - flexible Pub/Sub based data context objects (Symbiote.js).
+- **Automated Import Maps** — CDN-resolved import maps generated from `package.json` dependencies for efficient resource sharing (micro-frontend architecture, widgets, etc.).
+- **Markdown to HTML** — pull and render remote or local Markdown files.
+- **Code Highlighting** — fenced code blocks in Markdown are syntax-highlighted at build time.
 - **Asset Minification & Bundling** — on-the-fly minification of JS, CSS, HTML, and SVG with configurable excludes.
 - **Sitemap Generation** — automatic `sitemap.xml` output during SSG builds with exclude patterns.
-- **Cloud Image Management** — integrated [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit) for image publishing and CDN delivery.
+- **Cloud Image Management** — integrated [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit) for image publishing and CDN delivery. Interactive media widgets generation support out of the box (IMS).
 - **Icon System** — centralized Material Symbols icon collection with auto-injected link tags.
-- **TypeScript Support** — JSDoc types checked via `tsconfig.json`; no compilation step required.
+- **TypeScript Support** — type secured JS code base; no additional compilation step required (JSDoc + *.d.ts).
 
 ## Project Structure
 
@@ -71,6 +71,14 @@ npm install
 
 ### Development
 
+**Static site** (SSG build with watcher + SSR for web components + dev server):
+
+```bash
+npx jsda ssg
+```
+
+Output goes to `dist/`.
+
 **Dynamic app** (JSDA server + SSR for web components):
 
 ```bash
@@ -78,14 +86,6 @@ npx jsda serve
 ```
 
 The server starts at `http://localhost:3000`. Routes are defined in `src/dynamic-pages/routes/routes.js`.
-
-**Static site** (SSG build with watcher + SSR for web components):
-
-```bash
-npx jsda ssg
-```
-
-Output goes to `dist/`.
 
 ### Production Build
 
@@ -104,7 +104,7 @@ To enable it:
 1. Go to your repo **Settings → Pages → Source** and select **GitHub Actions**.
 2. Push to `main` — the workflow will build and deploy automatically.
 
-Live demo: https://rnd-pro.github.io/jsda-template/
+SSG result demo: https://rnd-pro.github.io/jsda-template/
 
 ## IDE Setup
 
@@ -112,7 +112,7 @@ JSDA relies heavily on JavaScript template literals for HTML and CSS (e.g., `/*h
 
 For the best developer experience, we strongly recommend enabling syntax highlighting for these template strings in your IDE. 
 
-If you are using **VS Code**, install the extension (F.e. [es6-string-html](https://github.com/0x00000001A/es6-string-html)). This will highlight HTML, SVG and CSS embedded inside your JavaScript files.
+If you are using **VS Code**, install the appropriate extension (F.e. [es6-string-html](https://github.com/0x00000001A/es6-string-html)). This will highlight, lint and enable auto-completion for HTML, SVG and CSS embedded inside your JavaScript files.
 
 ### Optional TypeScript Setup
 
@@ -159,6 +159,7 @@ JSDA heavily embraces a **convention-over-configuration** approach. By leveragin
 | `[name].css.js` | `[name].css` | CSS module (exports a CSS string). |
 | `[name].svg.js` | `[name].svg` | SVG graphic (exports an SVG markup string). |
 | `[name].json.js` | `[name].json` | JSON data payload (exports a JSON string). |
+| `[name].md.js` | `[name].md` | Markdown content (exports a markdown string). |
 | `index.js`       | `index.js`    | JS bundle entry point. |
 | `*.tpl.html`     | n/a           | Static template file containing `{[PLACEHOLDER]}` tags. |
 
@@ -170,7 +171,7 @@ These files determine the output file path:
 - `src/static-pages/about/index.html.js` → `dist/about/index.html`
 - `src/static-pages/app/index.js` → `dist/app/index.js` (bundled and minified automatically)
 
-They act as the default entry points for their containing directories.
+They act as the default entry points for final output generation.
 
 ### MIME Type Resolution and Minification
 
@@ -199,6 +200,6 @@ MIT License © [rnd-pro.com](https://rnd-pro.com)
 ## Links
 
 - [JSDA Manifest](https://github.com/rnd-pro/jsda)
-- [Symbiote.js](https://github.com/symbiotejs/symbiote.js)
 - [JSDA Kit](https://github.com/rnd-pro/jsda-kit)
+- [Symbiote.js](https://github.com/symbiotejs/symbiote.js)
 - [Cloud Images Toolkit](https://github.com/rnd-pro/cloud-images-toolkit)
