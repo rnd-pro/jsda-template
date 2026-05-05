@@ -112,13 +112,13 @@ JSDA relies heavily on JavaScript template literals for HTML and CSS (e.g., `/*h
 
 For the best developer experience, we strongly recommend enabling syntax highlighting for these template strings in your IDE. 
 
-If you are using **VS Code**, install the [es6-string-html](https://github.com/0x00000001A/es6-string-html) extension. This will automatically highlight HTML and CSS embedded inside your JavaScript files.
+If you are using **VS Code**, install the extension (F.e. [es6-string-html](https://github.com/0x00000001A/es6-string-html)). This will highlight HTML, SVG and CSS embedded inside your JavaScript files.
 
 ### Optional TypeScript Setup
 
-JSDA-Stack Template uses JSDoc annotations within standard JavaScript files to provide type safety via TypeScript. If you do not have TypeScript installed globally or supported natively in your IDE, you can still run type checks locally.
+We use JSDoc annotations within standard JavaScript files to provide type safety via TypeScript. If you do not have TypeScript installed globally or supported natively in your IDE, you can still run type checks locally.
 
-Simply install `typescript` as a dev dependency:
+Install `typescript` as a dev dependency:
 
 ```bash
 npm install -D typescript
@@ -132,7 +132,7 @@ npm run check:types
 
 This will run `npx tsc --noEmit` to validate your types against `tsconfig.json` without unnecessary compiling the source code.
 
-## Configuration
+## Project Configuration
 
 All project behavior is controlled via `project.cfg.js`:
 
@@ -149,16 +149,33 @@ All project behavior is controlled via `project.cfg.js`:
 
 Cloud Images Toolkit is configured separately in `cit-config.json`. See the [CIT documentation](https://github.com/rnd-pro/cloud-images-toolkit) for details.
 
-## File Conventions
+## File Naming and Syntax Conventions
 
-| Pattern | Purpose |
-|---|---|
-| `*.html.js` | Page generator — default export is an HTML string |
-| `*.css.js` | CSS module — default export is a CSS string |
-| `*.tpl.html` | Static HTML template with `{[PLACEHOLDER]}` syntax |
-| `logic.js` | Component logic (Symbiote.js class + registration) |
-| `template.js` | Component HTML template |
-| `styles.js` | Component scoped styles |
+JSDA heavily embraces a **convention-over-configuration** approach. By leveraging strict file naming patterns, JSDA generates various types of web assets directly from JavaScript modules without requiring complex build configuration files. The default export of these modules must simply be a string (or a function returning a string) containing the raw asset data.
+
+| Pattern | Output | Purpose |
+|---|---|---|
+| `[name].html.js` | `[name].html` | Dynamic HTML generator (exports an HTML string). |
+| `[name].css.js` | `[name].css` | CSS module (exports a CSS string). |
+| `[name].svg.js` | `[name].svg` | SVG graphic (exports an SVG markup string). |
+| `[name].json.js` | `[name].json` | JSON data payload (exports a JSON string). |
+| `index.js`       | `index.js`    | JS bundle entry point. |
+| `*.tpl.html`     | n/a           | Static template file containing `{[PLACEHOLDER]}` tags. |
+
+### The `index.*.js` Pattern and SSG
+
+During Static Site Generation (SSG), JSDA-Kit uses the file structure to reflect output path by scanning specifically for files matching the `index.*.js` pattern (which includes double extensions like `index.html.js` as well as plain `index.js`).
+
+These files determine the output file path:
+- `src/static-pages/about/index.html.js` → `dist/about/index.html`
+- `src/static-pages/app/index.js` → `dist/app/index.js` (bundled and minified automatically)
+
+They act as the default entry points for their containing directories.
+
+### MIME Type Resolution and Minification
+
+The double-extension pattern (`.[ext].js`) tells JSDA-Kit exactly what the final output format is. This `[ext]` is used for **proper MIME type resolution** during dynamic serving and dictates which minification pipeline to apply during SSG builds (e.g., HTML minifier for `.html.js`, CSS minifier for `.css.js`).
+
 
 ## Key Dependencies
 
