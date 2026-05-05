@@ -11,7 +11,16 @@
 
 A starter template for building modern web projects with the **JSDA-Stack**. 
 
-**JSDA** (JavaScript Distributed Assets) is a development philosophy and a set of solutions designed to leverage web standards by treating standard JavaScript ESM modules as text-based web asset generation endpoints (e.g., HTML, CSS, SVG, MD, JSON, etc.). 
+**JSDA** (JavaScript Distributed Assets) is a development philosophy and a set of solutions designed to leverage modern web standards. It treats standard JavaScript ESM modules as highly dynamic, text-based web asset generation endpoints (e.g., HTML, CSS, SVG, MD, JSON).
+
+It feels as intuitive as PHP (evaluating scripts to generate text), but overcomes the limitations of PHP architectures by being inherently universal and format-agnostic:
+
+- **Language as Template (No Additional Engines)**: JSDA uses native JavaScript template literals. You retain the full programmatic power of JS (loops, conditionals, map/filter) without the overhead of learning or compiling an intermediate templating language.
+- **Universal Multi-Format Generation**: JSDA applies the exact same unified mental model to dynamically build and serve *any* text-based file: CSS modules, SVG graphics, JSON payloads, or RSS feeds - automatically resolving proper MIME types via the `.[ext].js` file pattern.
+- **Isomorphic (Universal) Codebase**: PHP runs strictly on the server, forcing a language divide between backend rendering and frontend interactivity. With JSDA, you can share the exact same utility functions, state logic, and UI components seamlessly across both the Node.js server and the browser.
+- **Native Async & Data Fetching**: JSDA generation modules inherently support Promises and non-blocking I/O. You can use top-level await to query databases or fetch from remote APIs natively before rendering the final string.
+- **Distributed Composition (Micro-Frontends)**: JSDA relies on standard ES Modules, resources can be seamlessly imported from local files or even directly from remote JS CDNs. Teams can natively architect decentralized micro-frontends without complex bundlers.
+- **Hybrid Delivery**: JSDA lets you effortlessly transition between blazing-fast SSG for zero-cost edge deployment, or dynamic asset rendering for authenticated routes - all using the exact same codebase.
 
 Powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core underlying engine.
 
