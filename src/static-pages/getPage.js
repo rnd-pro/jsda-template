@@ -36,6 +36,6 @@ export async function getPage(pageData) {
     JS_PATH: pageData.JS_PATH || 'js/index.js',
     HEADER_CONTENT: /*html*/ `<img src="./logo/index.svg" width="40" height="40" alt="JSDA"> ${pageData.HEADER_CONTENT}`,
     CONTENT: await md(pageData.MD_URL),
-    FOOTER_CONTENT: pageData.FOOTER_CONTENT || `&copy; ${new Date().getFullYear()}`,
+    FOOTER_CONTENT: pageData.FOOTER_CONTENT || `JSDA Template &copy; ${new Date().getFullYear()}`,
   });
 };

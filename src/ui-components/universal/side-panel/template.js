@@ -2,8 +2,12 @@ import { icon } from '../../../icons/icon.js';
 
 const menuData = [
   {
-    name: 'JSDAStack',
+    name: 'Template Repo',
     path: './',
+  },
+  {
+    name: 'JSDA Manifest',
+    path: './pages/manifest/',
   },
   {
     name: 'Symbiote.js',
@@ -12,10 +16,6 @@ const menuData = [
   {
     name: 'Cloud Images Toolkit',
     path: './pages/cit/',
-  },
-  {
-    name: 'Template Repo',
-    path: './pages/template/',
   },
 ];
 

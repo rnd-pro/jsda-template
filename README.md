@@ -6,7 +6,6 @@
 ![JSDA Kit](https://img.shields.io/badge/jsda--kit-1.4.0-orange)
 ![Symbiote.js](https://img.shields.io/badge/Symbiote.js-3.6.0-orange)
 ![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-1.3.2-orange)
-
 [![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue?logo=github)](https://rnd-pro.github.io/jsda-template/)
 
 A starter template for building modern web projects with the **JSDA-Stack**. 
