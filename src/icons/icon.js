@@ -8,5 +8,5 @@ import names from './collection.js';
  * @returns 
  */
 export function icon(name) {
-  return `<span icon class="material-symbols-outlined">${name}</span>`;
+  return /*html*/ `<span icon class="material-symbols-outlined">${name}</span>`;
 };
