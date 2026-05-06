@@ -3,8 +3,10 @@ import styles from './styles.js';
 import template from './template.js';
 
 class ServerInfo extends Symbiote {
-  isoMode = true;
   serverTime = new Date().toISOString();
+  
+  // Node.js only code:
+  nodeVersion = globalThis.process.version;
 }
 
 ServerInfo.template = template;
