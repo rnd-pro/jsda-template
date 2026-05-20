@@ -1,6 +1,6 @@
 {
   "name": "jsda-template",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "JSDA-Kit project template",
   "keywords": [
     "jsda",
@@ -23,7 +23,6 @@
   "author": "team@rnd-pro.com",
   "type": "module",
   "scripts": {
-    "test": "test",
     "check:types": "npx tsc --noEmit",
     "copy-robots": "cp ./src/static-pages/robots.txt ./dist/robots.txt",
     "build": "npx jsda build && npm run copy-robots"

@@ -1,5 +1,14 @@
 import routes from '../routes/routes.js';
-import accessToken from '../../../secrets/access.js';
+
+let accessToken = '';
+
+try {
+  // @ts-expect-error
+  accessToken = (await import('../../../secrets/access.js')).default;
+} catch (e) {
+  console.warn('No access token found at ../../../secrets/access.js');
+  console.warn('Create secret token file to use simple auth check');
+}
 
 /**
  * 
@@ -34,7 +43,7 @@ export async function getRouteFn(url, headers) {
     let [key, value] = cookieStr.trim().split('=');
     cookiesObj[key] = value;
   });
-  if (route === '/dashboard/' && cookiesObj.access_token === accessToken) {
+  if (route === '/dashboard/' && accessToken && cookiesObj.access_token === accessToken) {
     return route;
   } else if (route === '/dashboard/') {
     return '/login/';
