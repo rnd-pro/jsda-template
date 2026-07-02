@@ -55,4 +55,12 @@ export default {
       '/login/',
     ],
   },
+  markdown: {
+    externalLinks: {
+      enabled: true,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      exclude: [],
+    },
+  },
 }
