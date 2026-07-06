@@ -1,6 +1,6 @@
 {
   "name": "jsda-template",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "JSDA-Kit project template",
   "keywords": [
     "jsda",
@@ -24,11 +24,10 @@
   "type": "module",
   "scripts": {
     "check:types": "npx tsc --noEmit",
-    "copy-robots": "cp ./src/static-pages/robots.txt ./dist/robots.txt",
-    "build": "npx jsda build && npm run copy-robots"
+    "build": "npx jsda build"
   },
   "dependencies": {
-    "jsda-kit": "^1.5.5"
+    "jsda-kit": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",

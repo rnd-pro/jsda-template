@@ -18,6 +18,14 @@ export default {
   static: {
     outputDir: './dist',
     sourceDir: './src/static-pages',
+    entryPatterns: [
+      'index.js',
+      'index.*.js',
+      '404.html.js',
+      'llms.txt.js',
+      'robots.txt.js',
+    ],
+    copy: [],
   },
   ssr: {
     enabled: true,
