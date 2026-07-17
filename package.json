@@ -1,6 +1,6 @@
 {
   "name": "jsda-template",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "JSDA-Kit project template",
   "keywords": [
     "jsda",
@@ -27,7 +27,7 @@
     "build": "npx jsda build"
   },
   "dependencies": {
-    "jsda-kit": "^1.6.0"
+    "jsda-kit": "^1.6.1"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",

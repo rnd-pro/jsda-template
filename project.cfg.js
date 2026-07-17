@@ -26,6 +26,7 @@ export default {
       'robots.txt.js',
     ],
     copy: [],
+    exclude: [],
   },
   ssr: {
     enabled: true,
