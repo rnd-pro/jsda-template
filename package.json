@@ -27,7 +27,7 @@
     "build": "npx jsda build"
   },
   "dependencies": {
-    "jsda-kit": "^1.6.1"
+    "jsda-kit": "^1.6.3"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
