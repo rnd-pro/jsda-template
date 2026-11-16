@@ -3,9 +3,9 @@
 ![JSDAStack](https://img.shields.io/badge/JSDAStack-Template-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
-![JSDA Kit](https://img.shields.io/badge/jsda--kit-1.4.0-orange)
-![Symbiote.js](https://img.shields.io/badge/Symbiote.js-3.6.0-orange)
-![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-1.3.2-orange)
+![JSDA Kit](https://img.shields.io/badge/jsda--kit-1.6.7-orange)
+![Symbiote.js](https://img.shields.io/badge/Symbiote.js-3.10.3-orange)
+![Cloud Images Toolkit](https://img.shields.io/badge/cloud--images--toolkit-1.3.5-orange)
 [![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-blue?logo=github)](https://rnd-pro.github.io/jsda-template/)
 
 A starter template for building modern web projects with the **JSDA-Stack**. 
@@ -27,6 +27,7 @@ Powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core under
 
 - **Hybrid Rendering** — SSG for static pages, dynamic JSDA server, all with a simple configuration (`project.cfg.js`).
 - **SSR for Web Components** — [Symbiote.js](https://github.com/symbiotejs/symbiote.js) - isomorphic (universal), client-only or server-only components are supported.
+- **HTML-app Starter** — a task board with HTML-defined custom elements, reactive JSON state, record editing, search, filters and explicit browser saving. Application behavior is declared in HTML; the JavaScript entry only loads the runtime.
 - **Powerful Isomorphic Application Data Management** - flexible Pub/Sub based data context objects (Symbiote.js).
 - **Automated Import Maps** — CDN-resolved import maps generated from `package.json` dependencies for efficient resource sharing (micro-frontend architecture, widgets, etc.).
 - **Markdown to HTML** — pull and render remote or local Markdown files.
@@ -45,7 +46,7 @@ Powered by **[JSDA-Kit](https://github.com/rnd-pro/jsda-kit)** as the core under
 │   ├── common-styles/              # Shared CSS modules and design tokens
 │   ├── dynamic-pages/              # Dynamic application (JSDA server endpoints)
 │   ├── static-pages/               # Static site generation (SSG) sources
-│   ├── ui-components/              # Web components (universal, client-only, server-only)
+│   ├── ui-components/              # HTML-app fragments and class-based web components
 │   └── icons/                      # Centralized Material Symbols configuration
 │
 ├── types/                          # TypeScript definitions (JSDoc)
@@ -109,6 +110,23 @@ npm run build
 ```
 
 Runs `jsda build` and copies `robots.txt` to the output directory.
+
+### HTML-app Starter
+
+Open `/pages/html-app/` on the static development server, or `/html-app/` on the dynamic server. The static example also works under a deployment subdirectory, such as GitHub Pages. Use the **HTML-app Starter** navigation link to find it.
+
+The shared [task-board template](./src/ui-components/html-app/task-board/template.html) contains the application:
+
+- `sym-context` declares the task list and draft as JSON. The nested draft context uses `bind` for incoming data and `pub-to` for edits.
+- `sym-component reg="starter-task"` defines a reusable custom element entirely in HTML. `sym-collection` renders its instances with Itemize, preserving record IDs while searching and filtering.
+- Native controls use declarative actions to append, edit, complete and delete records. `pub-map` publishes the visible and total counts.
+- **Save in this browser** persists only `tasks`; **Restore saved tasks** discards unsaved task edits. Saved tasks restore on the next visit. Storage errors and changes from another tab are shown in the UI.
+
+Both page entries import `@symbiotejs/symbiote/html-app`. The package is a direct dependency, and `project.cfg.js` maps both its core and HTML-app entry to versioned CDN modules. Shared styling lives beside the HTML fragment; no application classes or custom event handlers are needed for this example.
+
+This task board initializes in the browser. The existing universal components still demonstrate JSDA's SSR and hydration path. For HTML-app SSR, follow the foundation's [server rendering and hydration contract](https://github.com/symbiotejs/symbiote.js/blob/main/html-app/README.md#server-rendering-and-hydration), including explicit owner cleanup and hydration bindings.
+
+Browser saving needs HTTPS or loopback HTTP, Web Locks and IndexedDB. It stores data for the current origin, without sending it to a server. Static and dynamic development servers on different ports have separate saved lists. See the [HTML-app guide](https://github.com/symbiotejs/symbiote.js/blob/main/html-app/README.md) for JSON sources, trusted HTML imports, routing and HTTP synchronization.
 
 ### GitHub Pages
 

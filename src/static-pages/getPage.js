@@ -14,7 +14,8 @@ const template = fs.readFileSync('./src/static-pages/page.tpl.html', 'utf8');
  * @property {String} [CSS_PATH]
  * @property {String} [JS_PATH]
  * @property {String} HEADER_CONTENT
- * @property {String} MD_URL
+ * @property {String} [MD_URL]
+ * @property {String} [CONTENT] Trusted application HTML, used instead of Markdown
  * @property {String} [FOOTER_CONTENT]
  * @property {String} [SIDE_PANEL_HTML]
  * @property {Object<string, string>} [SIDE_PANEL_DATA]
@@ -35,7 +36,7 @@ export async function getPage(pageData) {
     CSS_PATH: pageData.CSS_PATH || 'css/index.css',
     JS_PATH: pageData.JS_PATH || 'js/index.js',
     HEADER_CONTENT: /*html*/ `<img src="./logo/index.svg" width="40" height="40" alt="JSDA"> ${pageData.HEADER_CONTENT}`,
-    CONTENT: await md(pageData.MD_URL),
+    CONTENT: pageData.CONTENT ?? await md(pageData.MD_URL),
     FOOTER_CONTENT: pageData.FOOTER_CONTENT || `JSDA Template &copy; ${new Date().getFullYear()}`,
   });
 };

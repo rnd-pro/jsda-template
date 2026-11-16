@@ -6,6 +6,10 @@ const menuData = [
     path: './',
   },
   {
+    name: 'HTML-app',
+    path: './pages/html-app/',
+  },
+  {
     name: 'JSDA Manifest',
     path: './pages/manifest/',
   },

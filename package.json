@@ -1,6 +1,6 @@
 {
   "name": "jsda-template",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "JSDA-Kit project template",
   "keywords": [
     "jsda",
@@ -27,10 +27,11 @@
     "build": "npx jsda build"
   },
   "dependencies": {
-    "jsda-kit": "^1.6.3"
+    "@symbiotejs/symbiote": "^3.10.3",
+    "jsda-kit": "^1.6.7"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
-    "cloud-images-toolkit": "^1.3.4"
+    "cloud-images-toolkit": "^1.3.5"
   }
 }

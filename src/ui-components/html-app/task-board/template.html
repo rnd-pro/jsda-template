@@ -1,0 +1,89 @@
+<h1>HTML-app task board</h1>
+<p>Create, edit and filter tasks using HTML and JSON. Save keeps the task list in this browser for your next visit.</p>
+
+<div class="task-board">
+  <sym-component reg="starter-task">
+    <template>
+      <div class="task-row" role="listitem">
+        <label class="task-done">
+          <input type="checkbox" bind="checked: done; onchange: [item-pub]done">
+          Done
+        </label>
+        <label class="task-title">Task title
+          <input required bind="value: title; oninput: [item-pub]title">
+        </label>
+        <button type="button" bind="onclick: [item-remove]">Delete task</button>
+      </div>
+    </template>
+  </sym-component>
+
+  <sym-context ctx="TASKS" storage-key="jsda-template-tasks" storage-keys="tasks">
+    <script type="application/json">
+      {
+        "tasks": [
+          {"id": "explore", "title": "Explore the HTML-app starter", "done": false},
+          {"id": "customize", "title": "Customize this template", "done": false}
+        ],
+        "draft": {"title": "", "done": false},
+        "query": "",
+        "filter": {},
+        "allFilter": {},
+        "activeFilter": {"done": false},
+        "completedFilter": {"done": true},
+        "shown": 0,
+        "total": 0
+      }
+    </script>
+
+    <sym-context bind="$: TASKS/draft" pub-to="TASKS/draft">
+      <form class="task-toolbar" action-data="TASKS/draft" action-reset="TASKS/draft"
+        bind="onsubmit: [append]TASKS/tasks">
+        <label class="task-title">New task
+          <input required placeholder="What needs doing?" bind="value: title; oninput: [pub-to]title">
+        </label>
+        <button type="submit">Add task</button>
+      </form>
+    </sym-context>
+
+    <div class="task-toolbar">
+      <label class="task-title">Search tasks
+        <input type="search" bind="value: query; oninput: [pub-to]query">
+      </label>
+      <fieldset>
+        <legend>Show tasks</legend>
+        <label><input type="radio" name="task-filter" checked action-data="TASKS/allFilter"
+          bind="onchange: [set]TASKS/filter"> All</label>
+        <label><input type="radio" name="task-filter" action-data="TASKS/activeFilter"
+          bind="onchange: [set]TASKS/filter"> Active</label>
+        <label><input type="radio" name="task-filter" action-data="TASKS/completedFilter"
+          bind="onchange: [set]TASKS/filter"> Completed</label>
+      </fieldset>
+    </div>
+
+    <p role="status"><span bind="textContent: shown"></span> of <span bind="textContent: total"></span> tasks shown</p>
+    <sym-collection data="TASKS/tasks" filter="TASKS/filter" search="TASKS/query" search-fields="title"
+      pub-map="TASKS/shown: count; TASKS/total: totalCount">
+      <div class="task-list" role="list" itemize="items" item-tag="starter-task"></div>
+      <p bind="hidden: !empty">No matching tasks.</p>
+    </sym-collection>
+
+    <div class="task-toolbar">
+      <form bind="onsubmit: [persist]TASKS">
+        <button type="submit">Save in this browser</button>
+      </form>
+      <button type="button" bind="onclick: [restore]TASKS">Restore saved tasks</button>
+      <sym-conditional when="TASKS/+storageDirty"><span>Unsaved changes</span></sym-conditional>
+      <sym-conditional when="TASKS/+storageFound"><span>A saved list is available.</span></sym-conditional>
+    </div>
+    <p role="alert" bind="textContent: +storageErrorMessage"></p>
+    <sym-conditional when="TASKS/+storageConflict">
+      <p>The saved list changed in another tab. Restore it or keep the current list.</p>
+      <button type="button" action-overwrite bind="onclick: [persist]TASKS">Keep this list</button>
+    </sym-conditional>
+  </sym-context>
+</div>
+
+<noscript><p>Enable JavaScript to use the task board.</p></noscript>
+<p>The task board runs in the browser; the existing component examples demonstrate server rendering.
+  Read the <a href="https://github.com/symbiotejs/symbiote.js/blob/main/html-app/README.md">HTML-app guide</a>
+  to add JSON sources, imported HTML fragments or routing.</p>

@@ -50,6 +50,7 @@ export default {
   importmap: {
     packageList: [
       '@symbiotejs/symbiote',
+      '@symbiotejs/symbiote/html-app',
     ],
     srcSchema: 'https://cdn.jsdelivr.net/npm/{pkg-name}/+esm',
     polyfills: false,
